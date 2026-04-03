@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome — Keystone Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;overflow:hidden;}
+body{background:#090909;color:#f2f2f4;font-family:'Barlow',sans-serif;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;}
+
+/* Ambient grain */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:.4;}
+
+/* Radial glow behind content */
+.glow{position:fixed;pointer-events:none;z-index:0;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle, var(--role-color, rgba(201,168,76,.08)) 0%, transparent 68%);
+  top:50%;left:50%;transform:translate(-50%,-50%);}
+
+/* Content */
+.splash{position:relative;z-index:1;text-align:center;max-width:680px;padding:0 24px;}
+
+/* Logo */
+.logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:11px;
+  letter-spacing:.06em;color:rgba(255,255,255,.25);margin-bottom:48px;
+  animation:fadeUp .6s ease both;}
+.logo span{color:rgba(201,168,76,.5);}
+
+/* Role eyebrow */
+.eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:.28em;text-transform:uppercase;margin-bottom:20px;
+  opacity:0;animation:fadeUp .5s ease .3s both;}
+
+/* Main line — the crafty one */
+.headline{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,6vw,64px);
+  font-weight:900;line-height:1.0;letter-spacing:-.01em;
+  color:#f2f2f4;margin-bottom:16px;
+  opacity:0;animation:fadeUp .6s ease .5s both;}
+.headline em{font-style:normal;}
+
+/* Sub */
+.sub{font-size:14px;color:#64646c;line-height:1.7;max-width:480px;margin:0 auto 40px;
+  opacity:0;animation:fadeUp .5s ease .7s both;}
+
+/* Progress bar */
+.progress-wrap{width:200px;height:1px;background:rgba(255,255,255,.08);
+  margin:0 auto 12px;overflow:hidden;opacity:0;animation:fadeIn .4s ease .9s both;}
+.progress-bar{height:100%;width:0%;transition:width linear;}
+
+.progress-label{font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);
+  opacity:0;animation:fadeIn .4s ease 1s both;}
+
+/* Name reveal */
+.name-tag{display:inline-flex;align-items:center;gap:10px;
+  padding:8px 20px;border:1px solid rgba(255,255,255,.08);
+  margin-bottom:36px;
+  opacity:0;animation:fadeUp .5s ease .6s both;}
+.name-tag-label{font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);}
+.name-tag-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:900;
+  color:#f2f2f4;letter-spacing:.04em;}
+
+/* Animated line separator */
+.separator{width:0;height:1px;margin:0 auto 36px;
+  animation:expandLine .8s ease .4s both;}
+@keyframes expandLine{from{width:0;}to{width:80px;}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* Exit animation */
+.splash.exit{animation:splashExit .5s ease both;}
+@keyframes splashExit{
+  from{opacity:1;transform:translateY(0);}
+  to{opacity:0;transform:translateY(-24px);}
+}
+body.exiting::after{content:'';position:fixed;inset:0;background:#090909;
+  z-index:999;animation:coverIn .35s ease .3s both;}
+@keyframes coverIn{from{opacity:0;}to{opacity:1;}}
+</style>
+</head>
+<body>
+
+<div class="glow" id="glow"></div>
+
+<div class="splash" id="splash">
+  <div class="logo">KEYSTONE<span>SYSTEMS</span></div>
+
+  <div class="eyebrow" id="eyebrow"></div>
+
+  <div class="name-tag">
+    <span class="name-tag-label">Welcome</span>
+    <span class="name-tag-name" id="user-name">James Miller</span>
+  </div>
+
+  <div class="separator" id="separator" style="background:transparent;"></div>
+
+  <div class="headline" id="headline"></div>
+
+  <div class="sub" id="sub"></div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+  <div class="progress-label" id="progress-label">Setting up your account</div>
+</div>
+
+<script>
+// ── Role config — in production role + name come from the auth session ──
+var SESSION = {
+  name:  'James Miller',
+  role:  'adjuster',  // 'adjuster' | 'firm' | 'carrier'
+};
+
+// ── Role content ──────────────────────────────────────────
+var CONTENT = {
+  adjuster: {
+    color:   'rgba(201,168,76,.08)',
+    barColor:'#C9A84C',
+    eyebrow: 'Independent Adjuster',
+    lines: [
+      { h:'The field doesn\'t wait.<br><em style="color:#C9A84C;">Neither do you.</em>',
+        s:'Your Inspekt Account is active. Choose your tools, set your availability, and let the work come to you.' },
+      { h:'You built your reputation<br><em style="color:#C9A84C;">one claim at a time.</em>',
+        s:'Now it works for you. Your Inspekt Account is the foundation — verified, portable, and built around how you actually work in the field.' },
+      { h:'Most adjusters wait<br><em style="color:#C9A84C;">for the phone to ring.</em>',
+        s:'Your Inspekt Account puts you in control of that. Select your products, complete your profile, and make yourself impossible to miss.' },
+      { h:'One account.<br><em style="color:#C9A84C;">Every tool you need.</em>',
+        s:'Your Inspekt Account travels with your license. Add products as your business grows — your credentials follow you everywhere.' },
+    ],
+  },
+  firm: {
+    color:   'rgba(201,168,76,.08)',
+    barColor:'#C9A84C',
+    eyebrow: 'IA Firm',
+    lines: [
+      { h:'A tighter operation<br><em style="color:#C9A84C;">starts here.</em>',
+        s:'Your Inspekt Account is live. Select the products that fit your operation and we\'ll have your team running leaner before the next file hits.' },
+      { h:'Your roster.<br><em style="color:#C9A84C;">Your process.<br>Your results.</em>',
+        s:'Keystone was built for the way IA firms actually work — not how someone thinks they should. Your account is the starting point. Let\'s build from here.' },
+      { h:'Less chasing.<br><em style="color:#C9A84C;">More closing.</em>',
+        s:'Your Inspekt Account connects your team, your adjusters, and your files under one roof. Choose your tools and see what that actually feels like.' },
+    ],
+  },
+  carrier: {
+    color:   'rgba(201,168,76,.08)',
+    barColor:'#C9A84C',
+    eyebrow: 'Carrier',
+    lines: [
+      { h:'The right adjuster.<br><em style="color:#C9A84C;">The right state.<br>Right now.</em>',
+        s:'Your Inspekt Account gives you access to a verified network of licensed, field-ready independent adjusters. Choose your products and put it to work.' },
+      { h:'The adjuster gap<br><em style="color:#C9A84C;">just closed.</em>',
+        s:'When volume spikes, you need the right people in the right markets fast. Your Inspekt Account is how that happens. Select your products to get started.' },
+      { h:'Built for the carriers<br><em style="color:#C9A84C;">who move first.</em>',
+        s:'Keystone gives you direct access to verified, licensed adjusters — without the friction. Your account is live. Your next step is choosing your tools.' },
+    ],
+  },
+};
+
+// ── Pick a random line for this role ──────────────────────
+var role    = SESSION.role;
+var content = CONTENT[role];
+var pick    = content.lines[Math.floor(Math.random() * content.lines.length)];
+
+// ── Apply content ─────────────────────────────────────────
+document.getElementById('glow').style.setProperty('--role-color', content.color);
+document.getElementById('glow').style.background =
+  'radial-gradient(circle, '+content.color+' 0%, transparent 68%)';
+document.getElementById('eyebrow').textContent   = content.eyebrow;
+document.getElementById('eyebrow').style.color   = content.barColor;
+document.getElementById('separator').style.background = content.barColor;
+document.getElementById('headline').innerHTML    = pick.h;
+document.getElementById('sub').textContent       = pick.s;
+document.getElementById('user-name').textContent = SESSION.name;
+document.getElementById('progress-bar').style.background = content.barColor;
+
+// ── Progress bar then redirect ────────────────────────────
+var DURATION = 3200; // ms before redirect
+var bar = document.getElementById('progress-bar');
+var label = document.getElementById('progress-label');
+var labels = ['Creating your Inspekt Account','Verifying your credentials','Almost there — welcome to Keystone'];
+var li = 0;
+
+var start = null;
+function tick(ts) {
+  if (!start) start = ts;
+  var pct = Math.min((ts - start) / DURATION * 100, 100);
+  bar.style.width = pct + '%';
+
+  // Cycle label
+  var step = Math.floor(pct / 34);
+  if (step !== li && step < labels.length) {
+    li = step;
+    label.style.opacity = '0';
+    setTimeout(function() {
+      label.textContent = labels[li];
+      label.style.transition = 'opacity .3s';
+      label.style.opacity = '1';
+    }, 150);
+  }
+
+  if (pct < 100) {
+    requestAnimationFrame(tick);
+  } else {
+    // Exit animation → redirect
+    setTimeout(function() {
+      document.body.classList.add('exiting');
+      document.getElementById('splash').classList.add('exit');
+      setTimeout(function() {
+        // In production: redirect to role-specific portal
+        var portals = {
+          adjuster: '/adjuster',
+          firm:     '/firm',
+          carrier:  '/carrier',
+        };
+        window.location.href = portals[role] || '/adjuster';
+      }, 600);
+    }, 200);
+  }
+}
+
+// Small delay before bar starts so animations settle
+setTimeout(function() { requestAnimationFrame(tick); }, 900);
+</script>
+
+</body>
+</html>

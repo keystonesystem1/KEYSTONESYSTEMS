@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Inspekt Account — Keystone Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#090909; --surf:#111113; --surf2:#181819; --surf3:#1e1e21;
+  --border:rgba(255,255,255,.07); --border-hi:rgba(255,255,255,.13);
+  --white:#f2f2f4; --muted:#64646c; --muted2:#3e3e46; --dim:#c8c8d0;
+  --bronze:#C9A84C; --bronze-lo:rgba(201,168,76,.08); --bronze-mid:rgba(201,168,76,.2);
+  --rose:#E05C8A;   --rose-lo:rgba(224,92,138,.08);
+  --blue:#4298CC;   --blue-lo:rgba(66,152,204,.08);
+  --green:#3DAA6A;  --green-lo:rgba(61,170,106,.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;min-height:100vh;}
+
+/* ── Nav ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(9,9,9,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);padding:0 5%;height:54px;
+  display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:13px;
+  letter-spacing:.04em;color:var(--white);text-decoration:none;}
+.nav-logo span{color:var(--bronze);}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-user{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.nav-user strong{color:var(--white);}
+.nav-signout{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);
+  background:none;border:none;cursor:pointer;transition:color .15s;}
+.nav-signout:hover{color:var(--white);}
+
+/* ── Page ── */
+.page{max-width:1060px;margin:0 auto;padding:24px 5% 80px;}
+
+/* ── Account header ── */
+.acct-head{display:flex;align-items:flex-start;justify-content:space-between;
+  gap:24px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+.acct-identity{display:flex;align-items:center;gap:18px;}
+.acct-avatar{width:56px;height:56px;border-radius:50%;background:var(--bronze-lo);
+  border:2px solid var(--bronze-mid);display:flex;align-items:center;justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;color:var(--bronze);
+  flex-shrink:0;}
+.acct-name{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;
+  color:var(--white);margin-bottom:4px;}
+.acct-meta{display:flex;flex-wrap:wrap;gap:6px 14px;}
+.acct-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  display:flex;align-items:center;gap:5px;}
+.acct-meta-item strong{color:var(--dim);}
+.verified-dot{width:5px;height:5px;border-radius:50%;background:var(--green);display:inline-block;}
+
+/* ── Active product notification ── */
+.acct-active-tag{display:inline-flex;align-items:center;gap:6px;
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:.08em;color:var(--dim);margin-top:8px;}
+.acct-active-dot{width:5px;height:5px;border-radius:50%;background:var(--rose);
+  flex-shrink:0;box-shadow:0 0 6px var(--rose);
+  animation:pulse 2s ease infinite;}
+
+/* ── Account details button ── */
+.acct-details-btn{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;padding:9px 20px;
+  border:1px solid var(--border-hi);color:var(--muted);background:var(--surf);
+  text-decoration:none;transition:all .15s;align-self:flex-start;white-space:nowrap;}
+.acct-details-btn:hover{color:var(--white);border-color:var(--bronze);color:var(--bronze);}
+
+/* ── Section label ── */
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--muted2);
+  margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* ── Product cards ── */
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-bottom:40px;}
+.prod-card{background:var(--surf);border:1px solid var(--border);
+  padding:24px 26px;position:relative;overflow:hidden;
+  transition:border-color .2s;display:flex;flex-direction:column;}
+.prod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.prod-card.rose::before{background:var(--rose);}
+.prod-card.blue::before{background:var(--blue);}
+.prod-card.enrolled{border-color:var(--border-hi);}
+.prod-card:not(.enrolled){opacity:.85;}
+.prod-card:not(.enrolled):hover{opacity:1;border-color:var(--border-hi);}
+.prod-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px;}
+.prod-eyebrow.rose{color:var(--rose);}
+.prod-eyebrow.blue{color:var(--blue);}
+.prod-name{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;
+  color:var(--white);margin-bottom:10px;line-height:1.0;}
+.prod-desc{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:18px;flex:1;}
+.prod-features{display:flex;flex-direction:column;gap:5px;margin-bottom:20px;}
+.prod-feature{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);}
+.prod-feature::before{content:'';width:4px;height:4px;border-radius:50%;flex-shrink:0;}
+.prod-card.rose .prod-feature::before{background:var(--rose);}
+.prod-card.blue .prod-feature::before{background:var(--blue);}
+.prod-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-top:16px;border-top:1px solid var(--border);margin-top:auto;}
+.prod-status{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;}
+.prod-status.enrolled-tag{color:var(--green);display:flex;align-items:center;gap:5px;}
+.prod-status.enrolled-tag::before{content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 6px var(--green);
+  animation:pulse 2s ease infinite;flex-shrink:0;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+.prod-status.not-enrolled{color:var(--muted2);}
+.prod-btn{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:900;
+  letter-spacing:.16em;text-transform:uppercase;padding:8px 18px;
+  cursor:pointer;transition:all .15s;border:none;text-decoration:none;
+  display:inline-flex;align-items:center;gap:5px;white-space:nowrap;}
+.prod-btn.open{background:var(--white);color:#000;}
+.prod-btn.open:hover{background:var(--dim);}
+.prod-btn.add.blue{background:var(--blue-lo);color:var(--blue);border:1px solid rgba(66,152,204,.3);}
+.prod-btn.add.blue:hover{background:rgba(66,152,204,.14);border-color:var(--blue);}
+
+/* ── SSO note ── */
+.sso-note{background:var(--surf2);border:1px solid var(--border);
+  padding:12px 18px;display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+.sso-icon{font-size:14px;flex-shrink:0;}
+.sso-text{font-size:11px;color:var(--muted);line-height:1.6;}
+.sso-text strong{color:var(--dim);font-weight:500;}
+
+/* ── Animations ── */
+.prod-card{animation:cardIn .4s ease both;}
+.prod-card:nth-child(1){animation-delay:.05s;}
+.prod-card:nth-child(2){animation-delay:.12s;}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">KEYSTONE<span>SYSTEMS</span></a>
+  <div class="nav-right">
+    <div class="nav-user">Signed in as <strong id="nav-name">James Miller</strong></div>
+    <button class="nav-signout" onclick="window.location='/'">Sign Out</button>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ACCOUNT HEADER -->
+  <div class="acct-head">
+    <div class="acct-identity">
+      <div class="acct-avatar" id="avatar">JM</div>
+      <div>
+        <div class="acct-name" id="full-name">James Miller</div>
+        <div class="acct-meta">
+          <div class="acct-meta-item"><span class="verified-dot"></span> NPN <strong id="npn-display">12345678</strong></div>
+          <div class="acct-meta-item">Role <strong>Independent Adjuster</strong></div>
+          <div class="acct-meta-item">Member since <strong>April 2026</strong></div>
+        </div>
+        <div class="acct-active-tag"><span class="acct-active-dot"></span><span style="white-space:nowrap;letter-spacing:0;">INSPEKT<span style="color:var(--rose);">iV</span></span><span style="margin-left:4px;">is live on the network</span></div>
+      </div>
+    </div>
+
+    <a class="acct-details-btn" href="/account">Account Details →</a>
+  </div>
+
+  <!-- SSO NOTE -->
+  <div class="sso-note">
+    <div class="sso-icon">🔑</div>
+    <div class="sso-text"><strong>Single sign-on enabled.</strong> Clicking "Open" on any active product signs you in automatically — no second login required.</div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="sec-label">Your Products</div>
+  <div class="products">
+
+    <div class="prod-card rose enrolled">
+      <div class="prod-eyebrow rose">Adjuster Marketplace</div>
+      <div class="prod-name">INSPEKT<span style="color:var(--rose);">iV</span></div>
+      <div class="prod-desc">Your verified adjuster profile, live on the network. Firms search for you, review your credentials, and dispatch claims directly.</div>
+      <div class="prod-features">
+        <div class="prod-feature">NIPR-verified profile · scoring tier</div>
+        <div class="prod-feature">AI-generated resume · QR share tools</div>
+        <div class="prod-feature">Real-time dispatch · messaging with firms</div>
+        <div class="prod-feature">Public network map visibility</div>
+      </div>
+      <div class="prod-footer">
+        <div class="prod-status enrolled-tag">Active</div>
+        <a class="prod-btn open" href="#">Open INSPEKTiV →</a>
+      </div>
+    </div>
+
+    <div class="prod-card blue">
+      <div class="prod-eyebrow blue">Field Documentation App</div>
+      <div class="prod-name">Inspekt<span style="color:var(--blue);">IT</span></div>
+      <div class="prod-desc">The field app built for independent adjusters. Guided inspection, photo documentation, GLR writing, and scope delivery — complete before you leave the property.</div>
+      <div class="prod-features">
+        <div class="prod-feature">Guided inspection workflow</div>
+        <div class="prod-feature">Structured photo package · GLR writing</div>
+        <div class="prod-feature">Scope-only claims — complete on-site</div>
+        <div class="prod-feature">Firms that use InspektIT dispatch first</div>
+      </div>
+      <div class="prod-footer">
+        <div class="prod-status not-enrolled">Not enrolled</div>
+        <a class="prod-btn add blue" href="#">Add InspektIT →</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+var USER = {
+  name:     'James Miller',
+  initials: 'JM',
+  npn:      '12345678',
+  email:    'james@email.com',
+};
+document.getElementById('nav-name').textContent     = USER.name;
+document.getElementById('full-name').textContent    = USER.name;
+document.getElementById('avatar').textContent       = USER.initials;
+document.getElementById('npn-display').textContent  = USER.npn;
+</script>
+</body>
+</html>
