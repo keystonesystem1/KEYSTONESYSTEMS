@@ -42,3 +42,86 @@ body {
   font-family: 'Barlow', sans-serif;
   min-height: 100vh;
 }
+
+/* ══════════════════════════════════════════════════
+   CANONICAL BRAND WORDMARKS
+   Use these classes ANYWHERE you write a product name.
+   Do not invent new bracket / accent treatments inline.
+   ══════════════════════════════════════════════════ */
+
+/* Base wordmark style — applies to all three products */
+.brand-wm,
+.brand-iv,
+.brand-it,
+.brand-iq {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  letter-spacing: .04em;
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* INSPEKTiV — rose accent on iV, NO bracket */
+.brand-iv .acc { color: var(--rose); font-style: normal; }
+
+/* INSPEKTiQ — green accent on iQ, NO bracket */
+.brand-iq .acc { color: var(--green); font-style: normal; }
+
+/* INSPEKT[iT] — blue L-bracket around iT */
+.brand-it .bk {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 5px;
+  margin-left: 2px;
+}
+.brand-it .bk .c {
+  position: absolute;
+  width: 5px; height: 5px;
+  border-style: solid;
+  border-width: 0;
+  border-color: var(--blue);
+}
+.brand-it .bk .c.tl { top: 0;    left: 0;  border-top-width:    1.2px; border-left-width:  1.2px; }
+.brand-it .bk .c.tr { top: 0;    right: 0; border-top-width:    1.2px; border-right-width: 1.2px; }
+.brand-it .bk .c.bl { bottom: 0; left: 0;  border-bottom-width: 1.2px; border-left-width:  1.2px; }
+.brand-it .bk .c.br { bottom: 0; right: 0; border-bottom-width: 1.2px; border-right-width: 1.2px; }
+
+/* Larger bracket variant — use .brand-it.lg for hero / display sizes */
+.brand-it.lg .bk { padding: 2px 7px; margin-left: 3px; }
+.brand-it.lg .bk .c { width: 7px; height: 7px; }
+.brand-it.lg .bk .c.tl, .brand-it.lg .bk .c.tr,
+.brand-it.lg .bk .c.bl, .brand-it.lg .bk .c.br { border-width: 0; }
+.brand-it.lg .bk .c.tl { border-top-width:    1.6px; border-left-width:  1.6px; }
+.brand-it.lg .bk .c.tr { border-top-width:    1.6px; border-right-width: 1.6px; }
+.brand-it.lg .bk .c.bl { border-bottom-width: 1.6px; border-left-width:  1.6px; }
+.brand-it.lg .bk .c.br { border-bottom-width: 1.6px; border-right-width: 1.6px; }
+
+/* KEYSTONESYSTEMS lockup — bronze "SYSTEMS" suffix */
+.brand-keystone {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  letter-spacing: .04em;
+  color: var(--white);
+  white-space: nowrap;
+}
+.brand-keystone .sys { color: var(--bronze); }
+
+/*
+USAGE (copy-paste, never reinvent):
+
+  <span class="brand-iv">INSPEKT<span class="acc">iV</span></span>
+
+  <span class="brand-iq">INSPEKT<span class="acc">iQ</span></span>
+
+  <span class="brand-it">INSPEKT<span class="bk">
+    <span class="c tl"></span><span class="c tr"></span>
+    <span class="c bl"></span><span class="c br"></span>
+    iT
+  </span></span>
+
+  <span class="brand-keystone">KEYSTONE<span class="sys">SYSTEMS</span></span>
+*/

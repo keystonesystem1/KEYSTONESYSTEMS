@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact KEYSTONESYSTEMS — Schedule a Demo or Talk to Our Team</title>
 <meta name="description" content="Talk to the team behind INSPEKTiT, INSPEKTiQ, and INSPEKTiV. Schedule a demo or send us a message — claim technology built for property insurance.">
+<link rel="stylesheet" href="/assets/css/shared.css">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=Orbitron:wght@900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -104,21 +105,21 @@ nav{
 .col-title{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1.05;letter-spacing:-.005em;}
 .col-sub{font-size:13px;color:var(--muted);line-height:1.6;}
 
-/* schedule column */
-.cal-frame{
-  flex:1;min-height:520px;
+/* schedule column — graphic + CTA */
+.cal-graphic{
+  flex:1;min-height:200px;
   background:var(--black);border:1px solid var(--border);
-  display:flex;flex-direction:column;
+  display:flex;align-items:center;justify-content:center;padding:18px;
+  margin-top:6px;
 }
-.cal-iframe{width:100%;height:100%;flex:1;border:0;background:var(--black);min-height:480px;}
-.cal-fallback{padding:24px;text-align:center;}
-.cal-fallback a{
-  display:inline-block;
-  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  background:var(--bronze);color:var(--black);padding:14px 28px;text-decoration:none;
-  transition:opacity .2s;margin-top:14px;
+.cal-graphic svg{width:100%;height:auto;max-width:340px;}
+.schedule-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--bronze);color:var(--black);padding:16px 32px;text-decoration:none;
+  transition:opacity .2s;margin-top:10px;
 }
-.cal-fallback a:hover{opacity:.85;}
+.schedule-cta:hover{opacity:.85;}
 
 /* form column */
 .field-row{display:flex;flex-direction:column;gap:8px;}
@@ -228,19 +229,72 @@ footer{
 <!-- TWO-COLUMN: Schedule + Form -->
 <div class="split z1">
 
-  <!-- LEFT: Schedule a Demo (cal.com embed) -->
+  <!-- LEFT: Schedule a Demo (graphic + CTA, no iframe) -->
   <div class="col-card">
     <div class="col-eyebrow">Schedule a Demo</div>
     <div class="col-title">Pick a time that works.</div>
-    <div class="col-sub">30-minute walkthrough of the platform with Mike Weaver, Co-Founder & CMO. Live demo of INSPEKT<strong style="color:var(--blue);">[iT]</strong> and INSPEKT<strong style="color:var(--green);">iQ</strong>, and a preview of INSPEKT<strong style="color:var(--rose);">iV</strong>.</div>
-
-    <div class="cal-frame">
-      <iframe class="cal-iframe" src="https://cal.com/keystonestack/mike/intro" loading="lazy" title="Schedule a demo with Mike Weaver"></iframe>
-      <div class="cal-fallback" id="cal-fallback" style="display:none;">
-        <div style="font-size:13px;color:var(--muted);">If the booking calendar doesn't load above, open it directly:</div>
-        <a href="https://keystonestack.cal.com/mike/intro" target="_blank" rel="noopener">Open Booking Page →</a>
-      </div>
+    <div class="col-sub">30-minute walkthrough to discuss your firm's situation and how our product suite —
+      <span class="brand-iv">INSPEKT<span class="acc">iV</span></span>,
+      <span class="brand-it">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span>,
+      and <span class="brand-iq">INSPEKT<span class="acc">iQ</span></span> — can help.
     </div>
+
+    <!-- Calendar graphic (pure SVG, no external dependency) -->
+    <div class="cal-graphic">
+      <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="cal-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#16161a"/>
+            <stop offset="1" stop-color="#0a0a0a"/>
+          </linearGradient>
+        </defs>
+        <!-- calendar body -->
+        <rect x="40" y="40" width="200" height="140" fill="url(#cal-grad)" stroke="#C9A84C" stroke-width="1.5" opacity="0.95"/>
+        <!-- header strip -->
+        <rect x="40" y="40" width="200" height="32" fill="#C9A84C" opacity="0.12"/>
+        <line x1="40" y1="72" x2="240" y2="72" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/>
+        <!-- binding rings -->
+        <rect x="78" y="28" width="6" height="22" rx="2" fill="#C9A84C" opacity="0.55"/>
+        <rect x="196" y="28" width="6" height="22" rx="2" fill="#C9A84C" opacity="0.55"/>
+        <!-- "MIKE WEAVER" header text -->
+        <text x="140" y="61" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="11" letter-spacing="2.4" fill="#C9A84C">MIKE WEAVER · 30 MIN</text>
+        <!-- date grid (4 cols x 4 rows of small boxes) -->
+        <g fill="#1e1e22" stroke="#222226" stroke-width="0.5">
+          <rect x="56"  y="86" width="34" height="20"/>
+          <rect x="94"  y="86" width="34" height="20"/>
+          <rect x="132" y="86" width="34" height="20"/>
+          <rect x="170" y="86" width="34" height="20"/>
+          <rect x="208" y="86" width="32" height="20"/>
+          <rect x="56"  y="110" width="34" height="20"/>
+          <rect x="94"  y="110" width="34" height="20"/>
+          <rect x="132" y="110" width="34" height="20"/>
+          <rect x="170" y="110" width="34" height="20"/>
+          <rect x="208" y="110" width="32" height="20"/>
+          <rect x="56"  y="134" width="34" height="20"/>
+          <rect x="94"  y="134" width="34" height="20"/>
+          <rect x="132" y="134" width="34" height="20"/>
+          <rect x="170" y="134" width="34" height="20"/>
+          <rect x="208" y="134" width="32" height="20"/>
+          <rect x="56"  y="158" width="34" height="20"/>
+          <rect x="94"  y="158" width="34" height="20"/>
+          <rect x="132" y="158" width="34" height="20"/>
+          <rect x="170" y="158" width="34" height="20"/>
+          <rect x="208" y="158" width="32" height="20"/>
+        </g>
+        <!-- highlighted "your slot" -->
+        <rect x="132" y="110" width="34" height="20" fill="#C9A84C" opacity="0.85"/>
+        <text x="149" y="124" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="12" fill="#0a0a0a">14</text>
+        <!-- pulse around highlighted slot -->
+        <rect x="128" y="106" width="42" height="28" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.45">
+          <animate attributeName="opacity" values="0.55;0;0.55" dur="2.4s" repeatCount="indefinite"/>
+        </rect>
+      </svg>
+    </div>
+
+    <a class="schedule-cta" href="https://keystonestack.cal.com/mike/intro" target="_blank" rel="noopener">
+      Open Booking Page →
+    </a>
+    <div style="font-size:11px;color:var(--muted-2);text-align:center;margin-top:4px;">Powered by cal.com · Opens in new tab</div>
   </div>
 
   <!-- RIGHT: Email Form -->
@@ -351,15 +405,6 @@ footer{
   }
   document.fonts.ready.then(function(){ requestAnimationFrame(stretchTagline); });
   window.addEventListener('resize', stretchTagline);
-
-  // Show fallback link if cal.com iframe fails to load within 4 seconds
-  setTimeout(function(){
-    var iframe = document.querySelector('.cal-iframe');
-    if (iframe && iframe.contentWindow && iframe.contentWindow.length === 0) {
-      // Best-effort detection — show fallback regardless of cross-origin restrictions
-    }
-    document.getElementById('cal-fallback').style.display = 'block';
-  }, 4000);
 
   // Contact form submission
   // - If a Web3Forms access key is set, posts to web3forms.com (delivers to sales@keystonestack.com)
