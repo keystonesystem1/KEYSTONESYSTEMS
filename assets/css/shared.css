@@ -85,20 +85,21 @@ body {
   border-width: 0;
   border-color: var(--blue);
 }
-.brand-it .bk .c.tl { top: 0;    left: 0;  border-top-width:    1.2px; border-left-width:  1.2px; }
-.brand-it .bk .c.tr { top: 0;    right: 0; border-top-width:    1.2px; border-right-width: 1.2px; }
-.brand-it .bk .c.bl { bottom: 0; left: 0;  border-bottom-width: 1.2px; border-left-width:  1.2px; }
-.brand-it .bk .c.br { bottom: 0; right: 0; border-bottom-width: 1.2px; border-right-width: 1.2px; }
+/* Spec: 1.5px L-bracket border in Brand Blue */
+.brand-it .bk .c.tl { top: 0;    left: 0;  border-top-width:    1.5px; border-left-width:  1.5px; }
+.brand-it .bk .c.tr { top: 0;    right: 0; border-top-width:    1.5px; border-right-width: 1.5px; }
+.brand-it .bk .c.bl { bottom: 0; left: 0;  border-bottom-width: 1.5px; border-left-width:  1.5px; }
+.brand-it .bk .c.br { bottom: 0; right: 0; border-bottom-width: 1.5px; border-right-width: 1.5px; }
 
 /* Larger bracket variant — use .brand-it.lg for hero / display sizes */
 .brand-it.lg .bk { padding: 2px 7px; margin-left: 3px; }
 .brand-it.lg .bk .c { width: 7px; height: 7px; }
 .brand-it.lg .bk .c.tl, .brand-it.lg .bk .c.tr,
 .brand-it.lg .bk .c.bl, .brand-it.lg .bk .c.br { border-width: 0; }
-.brand-it.lg .bk .c.tl { border-top-width:    1.6px; border-left-width:  1.6px; }
-.brand-it.lg .bk .c.tr { border-top-width:    1.6px; border-right-width: 1.6px; }
-.brand-it.lg .bk .c.bl { border-bottom-width: 1.6px; border-left-width:  1.6px; }
-.brand-it.lg .bk .c.br { border-bottom-width: 1.6px; border-right-width: 1.6px; }
+.brand-it.lg .bk .c.tl { border-top-width:    2px; border-left-width:  2px; }
+.brand-it.lg .bk .c.tr { border-top-width:    2px; border-right-width: 2px; }
+.brand-it.lg .bk .c.bl { border-bottom-width: 2px; border-left-width:  2px; }
+.brand-it.lg .bk .c.br { border-bottom-width: 2px; border-right-width: 2px; }
 
 /* KEYSTONESYSTEMS lockup — bronze "SYSTEMS" suffix */
 .brand-keystone {

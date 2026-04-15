@@ -91,13 +91,18 @@ nav{
   max-width:1200px;margin:0 auto;
   padding:32px 48px 80px;
   display:grid;grid-template-columns:1fr 1fr;gap:32px;
+  align-items:stretch;                /* both cards stretch to match the taller one */
   animation:fadeUp .6s ease .24s both;
 }
 .col-card{
   background:var(--surface);border:1px solid var(--border);
   padding:36px 32px;display:flex;flex-direction:column;gap:18px;
   position:relative;overflow:hidden;
+  height:100%;                        /* fill grid cell vertically */
 }
+/* Push the bottom CTA / submit button to the card bottom so both cards align */
+.col-card .schedule-cta,
+.col-card #contact-form{margin-top:auto;}
 .col-card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--bronze);
 }
@@ -257,7 +262,7 @@ footer{
         <rect x="78" y="28" width="6" height="22" rx="2" fill="#C9A84C" opacity="0.55"/>
         <rect x="196" y="28" width="6" height="22" rx="2" fill="#C9A84C" opacity="0.55"/>
         <!-- "MIKE WEAVER" header text -->
-        <text x="140" y="61" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="11" letter-spacing="2.4" fill="#C9A84C">MIKE WEAVER · 30 MIN</text>
+        <text x="140" y="61" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="11" letter-spacing="2.4" fill="#C9A84C">OPERATIONS · 30 MIN</text>
         <!-- date grid (4 cols x 4 rows of small boxes) -->
         <g fill="#1e1e22" stroke="#222226" stroke-width="0.5">
           <rect x="56"  y="86" width="34" height="20"/>
@@ -381,9 +386,9 @@ footer{
     <div class="footer-tagline">a claims technology company</div>
   </div>
   <div class="footer-links">
-    <a href="https://inspektit.io" class="footer-link" target="_blank" rel="noopener">INSPEKTiT</a>
-    <a href="https://inspektiq.io" class="footer-link" target="_blank" rel="noopener">INSPEKTiQ</a>
-    <a href="/inspektiv.html" class="footer-link" style="opacity:0.55;">INSPEKTiV — Coming Soon</a>
+    <a href="https://inspektit.io" class="footer-link" target="_blank" rel="noopener"><span class="brand-it" style="font-size:11px;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></a>
+    <a href="https://inspektiq.io" class="footer-link" target="_blank" rel="noopener"><span class="brand-iq" style="font-size:11px;">INSPEKT<span class="acc">iQ</span></span></a>
+    <a href="/inspektiv.html" class="footer-link" style="opacity:0.7;"><span class="brand-iv" style="font-size:11px;">INSPEKT<span class="acc">iV</span></span><span style="margin-left:6px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.18em;">— COMING SOON</span></a>
     <a href="/#about" class="footer-link">About</a>
     <a href="/contact.html" class="footer-link">Contact</a>
   </div>
