@@ -641,8 +641,9 @@
     justify-content: center;
     align-items: flex-start;
     position: relative; overflow: hidden;
-    opacity: 0.5;
+    transition: border-color .2s;
   }
+  .pfc-coming-soon:hover { border-color: rgba(224,92,138,.35); }
   .pfc-coming-soon::before {
     content: '';
     position: absolute; top: 0; left: 0; right: 0; height: 2px;
@@ -1086,7 +1087,7 @@
           </div>
         </div>
 
-        <a href="/inspektiv.html" class="stack-item" style="opacity:0.6;text-decoration:none;color:inherit;cursor:pointer;transition:opacity .2s,border-color .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">
+        <a href="/inspektiv.html" class="stack-item" style="text-decoration:none;color:inherit;cursor:pointer;transition:border-color .2s;">
           <div class="stack-icon" style="background: rgba(224,92,138,.1); border-color: rgba(224,92,138,.2);">
             <span style="font-family:'Orbitron',sans-serif; font-weight:900; font-size:16px; color:var(--rose); line-height:1;">iV</span>
           </div>
@@ -1178,11 +1179,36 @@
           </div>
         </div>
 
-        <!-- INSPEKTiV — Coming Soon (clickable to inspektiv.html) -->
-        <a href="/inspektiv.html" class="pfc-coming-soon" style="text-decoration:none;color:inherit;cursor:pointer;transition:opacity .2s,border-color .2s;" onmouseover="this.style.opacity='0.85';this.style.borderColor='rgba(224,92,138,.35)'" onmouseout="this.style.opacity='0.5';this.style.borderColor='var(--border)'">
-          <div class="pfc-prod-wm" style="margin-bottom:8px;"><span class="brand-iv" style="font-size:14px;">INSPEKT<span class="acc">iV</span></span></div>
-          <div class="coming-soon-pill">Coming Soon →</div>
-        </a>
+        <!-- INSPEKTiV flip card — firm perspective -->
+        <div class="pfc-wrap" style="--prod-accent: var(--rose);" onclick="this.classList.toggle('flipped')">
+          <div class="pfc-inner">
+            <div class="pfc-face">
+              <div class="pfc-prod-header">
+                <div class="pfc-prod-wm"><span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span></div>
+                <div class="pfc-tagline">Find the adjusters you can't.</div>
+              </div>
+              <p class="pfc-desc">NIPR-verified marketplace of independent adjusters. Search by ZIP, license state, Xactimate/Symbility certifications, designations, and experience. Fill the coverage gaps your roster misses — without bloating the roster.</p>
+              <div class="flip-hint-row">
+                <div class="flip-hint-icon">&#8634;</div>
+                <div class="flip-hint-text">Flip for key features</div>
+              </div>
+            </div>
+            <div class="pfc-face pfc-back">
+              <div class="pfc-back-label"><span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span> — What It Does</div>
+              <ul class="pfc-features">
+                <li>NIPR-verified adjuster profiles — license data auto-validated</li>
+                <li>Search by ZIP, license state, certifications, and software</li>
+                <li>Lasso map with radius rings — target a loss, see who's nearby</li>
+                <li>Reveal contact on demand — no wasted cold outreach</li>
+                <li>Coverage-gap analysis — see where your roster falls short before the claim lands</li>
+              </ul>
+              <div class="flip-back-row">
+                <a href="/inspektiv.html" class="pfc-cta">Learn more</a>
+                <button class="flip-back-btn" onclick="event.stopPropagation(); this.closest('.pfc-wrap').classList.remove('flipped')">Flip back</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -1239,11 +1265,36 @@
           </div>
         </div>
 
-        <!-- INSPEKTiV — Coming Soon (clickable to inspektiv.html) -->
-        <a href="/inspektiv.html" class="pfc-coming-soon" style="text-decoration:none;color:inherit;cursor:pointer;transition:opacity .2s,border-color .2s;" onmouseover="this.style.opacity='0.85';this.style.borderColor='rgba(224,92,138,.35)'" onmouseout="this.style.opacity='0.5';this.style.borderColor='var(--border)'">
-          <div class="pfc-prod-wm" style="margin-bottom:8px;"><span class="brand-iv" style="font-size:14px;">INSPEKT<span class="acc">iV</span></span></div>
-          <div class="coming-soon-pill">Coming Soon →</div>
-        </a>
+        <!-- INSPEKTiV flip card — adjuster perspective -->
+        <div class="pfc-wrap" style="--prod-accent: var(--rose);" onclick="this.classList.toggle('flipped')">
+          <div class="pfc-inner">
+            <div class="pfc-face">
+              <div class="pfc-prod-header">
+                <div class="pfc-prod-wm"><span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span></div>
+                <div class="pfc-tagline">One profile. Every firm.</div>
+              </div>
+              <p class="pfc-desc">NIPR-verified at signup. Visible to every subscribing firm in the network. Free for adjusters, forever. Four ways to join — text, email your resume, scan a QR code, or sign in with LinkedIn.</p>
+              <div class="flip-hint-row">
+                <div class="flip-hint-icon">&#8634;</div>
+                <div class="flip-hint-text">Flip for key features</div>
+              </div>
+            </div>
+            <div class="pfc-face pfc-back">
+              <div class="pfc-back-label"><span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span> — What It Does</div>
+              <ul class="pfc-features">
+                <li>NIPR verification at signup — no repeat license uploads</li>
+                <li>Visible to every subscribing firm automatically</li>
+                <li>Four onboarding paths — text, email, QR, LinkedIn</li>
+                <li>Self-service profile — Xactimate Address, Symbility ID, carriers worked</li>
+                <li>Free forever for adjusters — firms pay for access</li>
+              </ul>
+              <div class="flip-back-row">
+                <a href="/inspektiv.html" class="pfc-cta">Learn more</a>
+                <button class="flip-back-btn" onclick="event.stopPropagation(); this.closest('.pfc-wrap').classList.remove('flipped')">Flip back</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -1409,7 +1460,7 @@
               <span class="brand-iq" style="font-size:10px;">INSPEKT<span class="acc">iQ</span></span>
               <span class="hiw-tag-label">Dispatch &amp; Roster</span>
             </div>
-            <a href="/inspektiv.html" class="hiw-product-tag" style="--tag-c: var(--rose); opacity:0.65; text-decoration:none; transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.65'">
+            <a href="/inspektiv.html" class="hiw-product-tag" style="--tag-c: var(--rose); text-decoration:none;">
               <span class="brand-iv" style="font-size:10px;">INSPEKT<span class="acc">iV</span></span>
               <span class="hiw-tag-label">Coming Soon →</span>
             </a>
@@ -1495,7 +1546,7 @@
   <div class="footer-links">
     <a href="https://inspektit.io" class="footer-link" target="_blank" rel="noopener"><span class="brand-it" style="font-size:11px;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></a>
     <a href="https://inspektiq.io" class="footer-link" target="_blank" rel="noopener"><span class="brand-iq" style="font-size:11px;">INSPEKT<span class="acc">iQ</span></span></a>
-    <a href="/inspektiv.html" class="footer-link" style="opacity:0.7;"><span class="brand-iv" style="font-size:11px;">INSPEKT<span class="acc">iV</span></span><span style="margin-left:6px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.18em;">— COMING SOON</span></a>
+    <a href="/inspektiv.html" class="footer-link"><span class="brand-iv" style="font-size:11px;">INSPEKT<span class="acc">iV</span></span><span style="margin-left:6px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.18em;">— COMING SOON</span></a>
     <a href="#" class="footer-link">About</a>
     <a href="#" class="footer-link">Contact</a>
   </div>

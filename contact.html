@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact KEYSTONESYSTEMS — Schedule a Demo or Talk to Our Team</title>
 <meta name="description" content="Talk to the team behind INSPEKTiT, INSPEKTiQ, and INSPEKTiV. Schedule a demo or send us a message — claim technology built for property insurance.">
-<link rel="stylesheet" href="/assets/css/shared.css">
+<link rel="stylesheet" href="assets/css/shared.css">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=Orbitron:wght@900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -44,28 +44,28 @@ body::before{
 a{text-decoration:none;color:inherit;}
 button{cursor:pointer;font-family:inherit;}
 
-/* ── NAV (mirrors index.html) ── */
+/* ── NAV (mirrors index.html exactly) ── */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:9999;
-  background:rgba(10,10,10,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(9,9,9,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 48px;height:72px;
+  padding:0 48px;height:80px;
 }
-.nav-wordmark{display:flex;flex-direction:column;text-decoration:none;}
-.nav-wordmark-line1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:14px;letter-spacing:.04em;color:var(--white);white-space:nowrap;}
+.nav-wordmark{text-decoration:none;display:inline-block;line-height:1;}
+.nav-wordmark-line1{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:900;letter-spacing:.04em;color:var(--white);display:block;white-space:nowrap;}
 .nav-wordmark-line1 .sys{color:var(--bronze);}
-.nav-sub{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:400;color:var(--white);margin-top:2px;transform-origin:left center;white-space:nowrap;}
-.nav-links{display:flex;align-items:center;gap:32px;}
-.nav-link{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+.nav-sub{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:400;letter-spacing:.04em;color:var(--white);display:block;margin-top:2px;transform-origin:left center;white-space:nowrap;}
+.nav-links{display:flex;align-items:center;gap:40px;}
+.nav-link{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
 .nav-link:hover{color:var(--white);}
-.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);border:1px solid var(--bronze-hi);padding:8px 18px;background:none;cursor:pointer;transition:all .2s;}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);border:1px solid rgba(201,168,76,.35);padding:10px 24px;text-decoration:none;background:none;cursor:pointer;transition:background .2s,color .2s;}
 .nav-cta:hover{background:var(--bronze);color:var(--black);}
 
 /* ── HERO ── */
-.hero{padding:112px 48px 56px;text-align:center;position:relative;overflow:hidden;}
+.hero{padding:120px 48px 56px;text-align:center;position:relative;overflow:hidden;}
 .hero::before{
-  content:'';position:absolute;top:72px;left:50%;transform:translateX(-50%);
+  content:'';position:absolute;top:80px;left:50%;transform:translateX(-50%);
   width:800px;height:500px;border-radius:50%;
   background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 65%);
   pointer-events:none;
@@ -100,9 +100,11 @@ nav{
   position:relative;overflow:hidden;
   height:100%;                        /* fill grid cell vertically */
 }
-/* Push the bottom CTA / submit button to the card bottom so both cards align */
-.col-card .schedule-cta,
-.col-card #contact-form{margin-top:auto;}
+/* Bottom bundle: CTA + caption — sits naturally at bottom because cal-graphic (flex:1) fills the gap */
+.card-bottom{display:flex;flex-direction:column;gap:8px;}
+/* Form fills its column; submit bundle pushed to bottom of the form */
+#contact-form{flex:1;display:flex;flex-direction:column;gap:0;}
+#contact-form .form-bottom{margin-top:auto;display:flex;flex-direction:column;gap:8px;}
 .col-card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--bronze);
 }
@@ -154,7 +156,10 @@ nav{
   width:100%;padding:15px;background:var(--bronze);color:var(--black);border:none;
   font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;
   cursor:pointer;transition:opacity .2s;margin-top:10px;
+  /* Visual nudge: shift button down ~8px without affecting disclaimer below */
+  position:relative;top:8px;
 }
+.form-submit + .form-privacy{margin-top:0;}
 .form-submit:hover{opacity:.85;}
 .form-submit:disabled{opacity:.4;cursor:not-allowed;}
 
@@ -179,7 +184,7 @@ nav{
 .direct-value a{color:var(--bronze);transition:opacity .15s;}
 .direct-value a:hover{opacity:.8;}
 
-/* ── FOOTER (mirrors index.html) ── */
+/* ── FOOTER (mirrors index.html exactly) ── */
 footer{
   padding:28px 48px;border-top:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
@@ -188,7 +193,7 @@ footer{
 .footer-wm .sys{color:var(--bronze);}
 .footer-tagline{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:400;color:var(--white);margin-top:2px;transform-origin:left center;white-space:nowrap;}
 .footer-links{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-link{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);transition:color .2s;}
+.footer-link{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);text-decoration:none;transition:color .2s;}
 .footer-link:hover{color:var(--white);}
 .footer-copy{font-size:11px;color:var(--muted-2);}
 
@@ -227,7 +232,8 @@ footer{
   <div class="hero-inner">
     <div class="hero-eyebrow">Get In Touch</div>
     <h1 class="hero-headline">Talk to the team behind <em>the platform</em>.</h1>
-    <p class="hero-sub">Whether you're an IA firm running 50 claims a week or a carrier rethinking how files reach you — we'd like to hear what you're trying to solve. <strong>Schedule a 30-minute call</strong> or send a message and we'll be back inside one business day.</p>
+    <p class="hero-sub">Whether you're an IA firm running 50 claims a week or a carrier rethinking how files reach you — we'd like to hear what you're trying to solve.</p>
+    <p class="hero-sub" style="margin-top:14px;"><strong>Schedule a 30-minute call</strong> or send a message and we'll be back inside one business day.</p>
   </div>
 </div>
 
@@ -239,9 +245,9 @@ footer{
     <div class="col-eyebrow">Schedule a Demo</div>
     <div class="col-title">Pick a time that works.</div>
     <div class="col-sub">30-minute walkthrough to discuss your firm's situation and how our product suite —
-      <span class="brand-iv">INSPEKT<span class="acc">iV</span></span>,
-      <span class="brand-it">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span>,
-      and <span class="brand-iq">INSPEKT<span class="acc">iQ</span></span> — can help.
+      <span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span>,
+      <span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);display:inline-flex;align-items:center;"><span>INSPEKT</span><span style="position:relative;display:inline-flex;align-items:center;padding:1px 5px;margin-left:2px;"><span style="position:absolute;top:0;left:0;width:5px;height:5px;border-top:1.5px solid var(--blue);border-left:1.5px solid var(--blue);"></span><span style="position:absolute;top:0;right:0;width:5px;height:5px;border-top:1.5px solid var(--blue);border-right:1.5px solid var(--blue);"></span><span style="position:absolute;bottom:0;left:0;width:5px;height:5px;border-bottom:1.5px solid var(--blue);border-left:1.5px solid var(--blue);"></span><span style="position:absolute;bottom:0;right:0;width:5px;height:5px;border-bottom:1.5px solid var(--blue);border-right:1.5px solid var(--blue);"></span>iT</span></span>,
+      and <span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--green);">iQ</span></span> — can help.
     </div>
 
     <!-- Calendar graphic (pure SVG, no external dependency) -->
@@ -288,7 +294,7 @@ footer{
         </g>
         <!-- highlighted "your slot" -->
         <rect x="132" y="110" width="34" height="20" fill="#C9A84C" opacity="0.85"/>
-        <text x="149" y="124" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="12" fill="#0a0a0a">14</text>
+        <text x="149" y="124" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="12" fill="#0a0a0a" id="cal-today-num">14</text>
         <!-- pulse around highlighted slot -->
         <rect x="128" y="106" width="42" height="28" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.45">
           <animate attributeName="opacity" values="0.55;0;0.55" dur="2.4s" repeatCount="indefinite"/>
@@ -296,10 +302,12 @@ footer{
       </svg>
     </div>
 
-    <a class="schedule-cta" href="https://keystonestack.cal.com/mike/intro" target="_blank" rel="noopener">
-      Open Booking Page →
-    </a>
-    <div style="font-size:11px;color:var(--muted-2);text-align:center;margin-top:4px;">Powered by cal.com · Opens in new tab</div>
+    <div class="card-bottom">
+      <a class="schedule-cta" href="https://keystonestack.cal.com/mike/intro" target="_blank" rel="noopener">
+        Open Booking Page →
+      </a>
+      <div style="font-size:11px;color:var(--muted-2);text-align:center;">Powered by cal.com · Opens in new tab</div>
+    </div>
   </div>
 
   <!-- RIGHT: Email Form -->
@@ -351,12 +359,12 @@ footer{
         <textarea id="cf-message" name="message" required placeholder="What are you trying to solve? (Or just say hi.)"></textarea>
       </div>
 
-      <div class="form-status" id="form-status"></div>
-
-      <button type="submit" class="form-submit" id="form-submit-btn">Send Message →</button>
-
-      <div class="form-privacy">
-        We'll only use your info to respond. No marketing list, no spam. <a href="/#privacy">Privacy</a>.
+      <div class="form-bottom">
+        <div class="form-status" id="form-status"></div>
+        <button type="submit" class="form-submit" id="form-submit-btn">Send Message →</button>
+        <div class="form-privacy">
+          We'll only use your info to respond. No marketing list, no spam. <a href="/#privacy">Privacy</a>.
+        </div>
       </div>
     </form>
   </div>
@@ -381,14 +389,14 @@ footer{
 
 <!-- FOOTER -->
 <footer class="z1">
-  <div class="footer-wm">
-    <div style="white-space:nowrap;">KEYSTONE<span class="sys">SYSTEMS</span></div>
-    <div class="footer-tagline">a claims technology company</div>
+  <div class="footer-wm" id="footer-lockup">
+    <div style="font-family:'Orbitron',sans-serif; font-size:14px; font-weight:900; letter-spacing:.04em; color:var(--white); white-space:nowrap;" id="footer-wm-line">KEYSTONE<span style="color:var(--bronze);">SYSTEMS</span></div>
+    <div style="font-family:'Barlow Condensed',sans-serif; font-size:9px; font-weight:400; color:var(--white); margin-top:2px; transform-origin:left center; white-space:nowrap;" id="footer-tagline">a claims technology company</div>
   </div>
   <div class="footer-links">
-    <a href="https://inspektit.io" class="footer-link" target="_blank" rel="noopener"><span class="brand-it" style="font-size:11px;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></a>
-    <a href="https://inspektiq.io" class="footer-link" target="_blank" rel="noopener"><span class="brand-iq" style="font-size:11px;">INSPEKT<span class="acc">iQ</span></span></a>
-    <a href="/inspektiv.html" class="footer-link" style="opacity:0.7;"><span class="brand-iv" style="font-size:11px;">INSPEKT<span class="acc">iV</span></span><span style="margin-left:6px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.18em;">— COMING SOON</span></a>
+    <a href="https://inspektit.io" class="footer-link" target="_blank" rel="noopener"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:11px;letter-spacing:.04em;color:var(--white);display:inline-flex;align-items:center;">INSPEKT<span style="position:relative;display:inline-flex;align-items:center;padding:1px 5px;margin-left:2px;"><span style="position:absolute;top:0;left:0;width:5px;height:5px;border-top:1.5px solid var(--blue);border-left:1.5px solid var(--blue);"></span><span style="position:absolute;top:0;right:0;width:5px;height:5px;border-top:1.5px solid var(--blue);border-right:1.5px solid var(--blue);"></span><span style="position:absolute;bottom:0;left:0;width:5px;height:5px;border-bottom:1.5px solid var(--blue);border-left:1.5px solid var(--blue);"></span><span style="position:absolute;bottom:0;right:0;width:5px;height:5px;border-bottom:1.5px solid var(--blue);border-right:1.5px solid var(--blue);"></span>iT</span></span></a>
+    <a href="https://inspektiq.io" class="footer-link" target="_blank" rel="noopener"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:11px;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--green);">iQ</span></span></a>
+    <a href="/inspektiv.html" class="footer-link"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:11px;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span><span style="margin-left:6px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.18em;">— COMING SOON</span></a>
     <a href="/#about" class="footer-link">About</a>
     <a href="/contact.html" class="footer-link">Contact</a>
   </div>
@@ -410,6 +418,12 @@ footer{
   }
   document.fonts.ready.then(function(){ requestAnimationFrame(stretchTagline); });
   window.addEventListener('resize', stretchTagline);
+
+  // Calendar graphic: set the highlighted slot to today's day-of-month so it never looks stale.
+  (function setCalendarToday(){
+    var el = document.getElementById('cal-today-num');
+    if (el) el.textContent = new Date().getDate();
+  })();
 
   // Contact form submission
   // - If a Web3Forms access key is set, posts to web3forms.com (delivers to sales@keystonestack.com)

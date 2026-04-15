@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>INSPEKTiV — Coming Soon · Field Connectivity for Property Insurance</title>
 <meta name="description" content="INSPEKTiV is the firm-to-adjuster connectivity layer of the KEYSTONESYSTEMS platform. Coming soon — schedule a preview demo or get notified at launch.">
-<link rel="stylesheet" href="/assets/css/shared.css">
+<link rel="stylesheet" href="assets/css/shared.css">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=Orbitron:wght@900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -42,27 +42,27 @@ body::before{
 a{text-decoration:none;color:inherit;}
 button{cursor:pointer;font-family:inherit;}
 
-/* NAV */
+/* NAV (mirrors index.html exactly) */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:9999;
-  background:rgba(10,10,10,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(9,9,9,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;
+  display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:80px;
 }
-.nav-wordmark{display:flex;flex-direction:column;text-decoration:none;}
-.nav-wordmark-line1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:14px;letter-spacing:.04em;color:var(--white);white-space:nowrap;}
+.nav-wordmark{text-decoration:none;display:inline-block;line-height:1;}
+.nav-wordmark-line1{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:900;letter-spacing:.04em;color:var(--white);display:block;white-space:nowrap;}
 .nav-wordmark-line1 .sys{color:var(--bronze);}
-.nav-sub{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:400;color:var(--white);margin-top:2px;transform-origin:left center;white-space:nowrap;}
-.nav-links{display:flex;align-items:center;gap:32px;}
-.nav-link{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+.nav-sub{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:400;letter-spacing:.04em;color:var(--white);display:block;margin-top:2px;transform-origin:left center;white-space:nowrap;}
+.nav-links{display:flex;align-items:center;gap:40px;}
+.nav-link{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
 .nav-link:hover{color:var(--white);}
-.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);border:1px solid var(--bronze-hi);padding:8px 18px;background:none;cursor:pointer;transition:all .2s;}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);border:1px solid rgba(201,168,76,.35);padding:10px 24px;text-decoration:none;background:none;cursor:pointer;transition:background .2s,color .2s;}
 .nav-cta:hover{background:var(--bronze);color:var(--black);}
 
 /* HERO */
-.hero{padding:120px 48px 64px;text-align:center;position:relative;overflow:hidden;}
+.hero{padding:128px 48px 64px;text-align:center;position:relative;overflow:hidden;}
 .hero::before{
-  content:'';position:absolute;top:72px;left:50%;transform:translateX(-50%);
+  content:'';position:absolute;top:80px;left:50%;transform:translateX(-50%);
   width:900px;height:560px;border-radius:50%;
   background:radial-gradient(circle,rgba(224,92,138,.10) 0%,transparent 65%);
   pointer-events:none;
@@ -113,14 +113,20 @@ nav{
   max-width:1100px;margin:0 auto;
   padding:24px 48px 80px;
   display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  align-items:stretch;
   animation:fadeUp .6s ease .32s both;
 }
 .col-card{
   background:var(--surface);border:1px solid var(--border);
   padding:36px 32px;display:flex;flex-direction:column;gap:16px;
-  position:relative;overflow:hidden;
+  position:relative;overflow:hidden;height:100%;
 }
 .col-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--rose);}
+/* Bottom bundle sits naturally at bottom because cal-graphic (flex:1) fills the gap above */
+.card-bottom{display:flex;flex-direction:column;gap:8px;}
+/* Form fills its column; submit bundle pushed to bottom of the form */
+#iv-form{flex:1;display:flex;flex-direction:column;gap:0;}
+#iv-form .form-bottom{margin-top:auto;display:flex;flex-direction:column;gap:8px;}
 .col-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--rose);opacity:.7;}
 .col-title{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;color:var(--white);line-height:1.05;letter-spacing:-.005em;}
 .col-sub{font-size:13px;color:var(--muted);line-height:1.6;}
@@ -178,15 +184,24 @@ nav{
 .related-desc{font-size:13px;color:var(--muted);line-height:1.5;}
 .related-cta{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--white);opacity:.75;margin-top:6px;}
 
-/* FOOTER */
+/* FOOTER (mirrors index.html exactly) */
 footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
 .footer-wm{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:900;letter-spacing:.04em;color:var(--white);display:flex;flex-direction:column;}
 .footer-wm .sys{color:var(--bronze);}
-.footer-tagline{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:400;color:var(--white);margin-top:2px;}
+.footer-tagline{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:400;color:var(--white);margin-top:2px;transform-origin:left center;white-space:nowrap;}
 .footer-links{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-link{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);transition:color .2s;}
+.footer-link{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);text-decoration:none;transition:color .2s;}
 .footer-link:hover{color:var(--white);}
 .footer-copy{font-size:11px;color:var(--muted-2);}
+
+/* Calendar graphic (rose-themed for iV) */
+.cal-graphic{
+  flex:1;min-height:180px;
+  background:var(--black);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;padding:18px;
+  margin-top:6px;
+}
+.cal-graphic svg{width:100%;height:auto;max-width:340px;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 
@@ -223,9 +238,9 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 <div class="hero z1">
   <div class="hero-inner">
     <div class="coming-pill"><span class="dot"></span>Coming Soon</div>
-    <div class="product-wm">INSPEKT<span class="acc">iV</span></div>
+    <div class="product-wm" style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:#F2F2F4;">INSPEKT<span style="color:#E05C8A;">iV</span></div>
     <div class="hero-tagline">Field Connectivity</div>
-    <p class="hero-sub">The connectivity layer of the KEYSTONE<span style="color:var(--bronze);">SYSTEMS</span> platform — connecting IA firms and independent adjusters who would never have found each other. Expanding claim-handling capacity for firms. Opening roster access for adjusters. Exponentially.</p>
+    <p class="hero-sub">The connectivity layer of the <span style="color:#ffffff;">KEYSTONE</span><span style="color:var(--bronze);">SYSTEMS</span> platform — connecting IA firms and independent adjusters who would never have found each other. Expanding claim-handling capacity for firms. Opening roster access for adjusters. Exponentially.</p>
   </div>
 </div>
 
@@ -245,7 +260,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
     <div class="pitch-card">
       <div class="pitch-eyebrow">Why It Matters</div>
       <div class="pitch-title">Every claim turned away has a cost.</div>
-      <div class="pitch-body">A mid-size loss in a rural ZIP. A daily claim 150 miles from your nearest adjuster. The carrier won't pay mileage. INSPEKTiV expands your reach without expanding your overhead.</div>
+      <div class="pitch-body">A mid-size loss in a rural ZIP. A daily claim 150 miles from your nearest adjuster. The carrier won't pay mileage. <span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span> expands your reach without expanding your overhead.</div>
     </div>
   </div>
 </div>
@@ -256,19 +271,74 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   <!-- SCHEDULE -->
   <div class="col-card">
     <div class="col-eyebrow">Schedule a Preview</div>
-    <div class="col-title">See INSPEKTiV before launch.</div>
-    <div class="col-sub">30-minute walkthrough with Mike Weaver, Co-Founder &amp; CMO. Live preview of the firm console, adjuster onboarding flows, and the marketplace search.</div>
-    <a class="cal-cta" href="https://keystonestack.cal.com/mike/intro" target="_blank" rel="noopener">
-      Book a 30-min Demo →
-    </a>
-    <div style="font-size:11px;color:var(--muted-2);text-align:center;margin-top:6px;">Powered by cal.com · Pick a time that works.</div>
+    <div class="col-title">See <span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span> before launch.</div>
+    <div class="col-sub">30-minute walkthrough with our team. Live preview of the firm console, adjuster onboarding flows, and the marketplace search.</div>
+
+    <!-- Calendar graphic (rose-themed, matches contact.html pattern) -->
+    <div class="cal-graphic">
+      <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="iv-cal-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#16161a"/>
+            <stop offset="1" stop-color="#0a0a0a"/>
+          </linearGradient>
+        </defs>
+        <!-- calendar body -->
+        <rect x="40" y="40" width="200" height="140" fill="url(#iv-cal-grad)" stroke="#E05C8A" stroke-width="1.5" opacity="0.95"/>
+        <!-- header strip -->
+        <rect x="40" y="40" width="200" height="32" fill="#E05C8A" opacity="0.12"/>
+        <line x1="40" y1="72" x2="240" y2="72" stroke="#E05C8A" stroke-width="0.8" opacity="0.4"/>
+        <!-- binding rings -->
+        <rect x="78" y="28" width="6" height="22" rx="2" fill="#E05C8A" opacity="0.55"/>
+        <rect x="196" y="28" width="6" height="22" rx="2" fill="#E05C8A" opacity="0.55"/>
+        <!-- header text -->
+        <text x="140" y="61" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="11" letter-spacing="2.4" fill="#E05C8A">PREVIEW · 30 MIN</text>
+        <!-- date grid (5 cols x 4 rows) -->
+        <g fill="#1e1e22" stroke="#222226" stroke-width="0.5">
+          <rect x="56"  y="86" width="34" height="20"/>
+          <rect x="94"  y="86" width="34" height="20"/>
+          <rect x="132" y="86" width="34" height="20"/>
+          <rect x="170" y="86" width="34" height="20"/>
+          <rect x="208" y="86" width="32" height="20"/>
+          <rect x="56"  y="110" width="34" height="20"/>
+          <rect x="94"  y="110" width="34" height="20"/>
+          <rect x="132" y="110" width="34" height="20"/>
+          <rect x="170" y="110" width="34" height="20"/>
+          <rect x="208" y="110" width="32" height="20"/>
+          <rect x="56"  y="134" width="34" height="20"/>
+          <rect x="94"  y="134" width="34" height="20"/>
+          <rect x="132" y="134" width="34" height="20"/>
+          <rect x="170" y="134" width="34" height="20"/>
+          <rect x="208" y="134" width="32" height="20"/>
+          <rect x="56"  y="158" width="34" height="20"/>
+          <rect x="94"  y="158" width="34" height="20"/>
+          <rect x="132" y="158" width="34" height="20"/>
+          <rect x="170" y="158" width="34" height="20"/>
+          <rect x="208" y="158" width="32" height="20"/>
+        </g>
+        <!-- highlighted slot -->
+        <rect x="132" y="110" width="34" height="20" fill="#E05C8A" opacity="0.85"/>
+        <text x="149" y="124" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="12" fill="#0a0a0a" id="iv-cal-today-num">14</text>
+        <!-- pulse -->
+        <rect x="128" y="106" width="42" height="28" fill="none" stroke="#E05C8A" stroke-width="1.2" opacity="0.45">
+          <animate attributeName="opacity" values="0.55;0;0.55" dur="2.4s" repeatCount="indefinite"/>
+        </rect>
+      </svg>
+    </div>
+
+    <div class="card-bottom">
+      <a class="cal-cta" href="https://keystonestack.cal.com/mike/intro" target="_blank" rel="noopener">
+        Book a 30-min Demo →
+      </a>
+      <div style="font-size:11px;color:var(--muted-2);text-align:center;">Powered by cal.com · Opens in new tab</div>
+    </div>
   </div>
 
   <!-- EMAIL FORM -->
   <div class="col-card">
     <div class="col-eyebrow">Get Notified at Launch</div>
     <div class="col-title">Be first in line.</div>
-    <div class="col-sub">Drop your details and we'll let you know when INSPEKTiV opens to your firm or area. Early-access firms lock in launch pricing.</div>
+    <div class="col-sub">Drop your details and we'll let you know when <span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span> opens to your firm or area. Early-access firms lock in launch pricing.</div>
 
     <form id="iv-form" onsubmit="submitIV(event)">
       <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
@@ -299,9 +369,11 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
         <textarea id="iv-message" name="message" placeholder="e.g. Texas-based, 200+ CAT claims this season, can't find enough Xactimate-certified adjusters."></textarea>
       </div>
 
-      <div class="form-status" id="iv-status"></div>
-
-      <button type="submit" class="form-submit" id="iv-submit">Reserve My Spot →</button>
+      <div class="form-bottom">
+        <div class="form-status" id="iv-status"></div>
+        <button type="submit" class="form-submit" id="iv-submit">Reserve My Spot →</button>
+        <div style="font-size:11px;color:var(--muted-2);text-align:center;">One email. No marketing list, no spam.</div>
+      </div>
     </form>
   </div>
 
@@ -312,12 +384,12 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   <div class="related-eyebrow">Available Today</div>
   <div class="related-grid">
     <a class="related-card it related-it" href="https://inspektit.io" target="_blank" rel="noopener">
-      <span class="brand-it" style="font-size:14px;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span>
+      <span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:14px;letter-spacing:.04em;color:var(--white);display:inline-flex;align-items:center;">INSPEKT<span style="position:relative;display:inline-flex;align-items:center;padding:1px 5px;margin-left:2px;"><span style="position:absolute;top:0;left:0;width:5px;height:5px;border-top:1.5px solid #4298CC;border-left:1.5px solid #4298CC;"></span><span style="position:absolute;top:0;right:0;width:5px;height:5px;border-top:1.5px solid #4298CC;border-right:1.5px solid #4298CC;"></span><span style="position:absolute;bottom:0;left:0;width:5px;height:5px;border-bottom:1.5px solid #4298CC;border-left:1.5px solid #4298CC;"></span><span style="position:absolute;bottom:0;right:0;width:5px;height:5px;border-bottom:1.5px solid #4298CC;border-right:1.5px solid #4298CC;"></span>iT</span></span>
       <div class="related-desc">Field documentation app. Guided inspection workflow, auto-labeled photos, GLR generated at the property.</div>
       <div class="related-cta">Visit inspektit.io →</div>
     </a>
     <a class="related-card iq related-iq" href="https://inspektiq.io" target="_blank" rel="noopener">
-      <span class="brand-iq" style="font-size:14px;">INSPEKT<span class="acc">iQ</span></span>
+      <span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:14px;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:#5BC273;">iQ</span></span>
       <div class="related-desc">Firm operations platform. Intake, assignment, review, carrier-ready submission — without the spreadsheets.</div>
       <div class="related-cta">Visit inspektiq.io →</div>
     </a>
@@ -326,14 +398,14 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 
 <!-- FOOTER -->
 <footer class="z1">
-  <div class="footer-wm">
-    <div style="white-space:nowrap;">KEYSTONE<span class="sys">SYSTEMS</span></div>
-    <div class="footer-tagline">a claims technology company</div>
+  <div class="footer-wm" id="footer-lockup">
+    <div style="font-family:'Orbitron',sans-serif; font-size:14px; font-weight:900; letter-spacing:.04em; color:var(--white); white-space:nowrap;" id="footer-wm-line">KEYSTONE<span style="color:var(--bronze);">SYSTEMS</span></div>
+    <div style="font-family:'Barlow Condensed',sans-serif; font-size:9px; font-weight:400; color:var(--white); margin-top:2px; transform-origin:left center; white-space:nowrap;" id="footer-tagline">a claims technology company</div>
   </div>
   <div class="footer-links">
-    <a href="https://inspektit.io" class="footer-link" target="_blank" rel="noopener"><span class="brand-it" style="font-size:11px;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></a>
-    <a href="https://inspektiq.io" class="footer-link" target="_blank" rel="noopener"><span class="brand-iq" style="font-size:11px;">INSPEKT<span class="acc">iQ</span></span></a>
-    <a href="/inspektiv.html" class="footer-link" style="opacity:0.7;"><span class="brand-iv" style="font-size:11px;">INSPEKT<span class="acc">iV</span></span><span style="margin-left:6px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.18em;">— COMING SOON</span></a>
+    <a href="https://inspektit.io" class="footer-link" target="_blank" rel="noopener"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:11px;letter-spacing:.04em;color:var(--white);display:inline-flex;align-items:center;">INSPEKT<span style="position:relative;display:inline-flex;align-items:center;padding:1px 5px;margin-left:2px;"><span style="position:absolute;top:0;left:0;width:5px;height:5px;border-top:1.5px solid #4298CC;border-left:1.5px solid #4298CC;"></span><span style="position:absolute;top:0;right:0;width:5px;height:5px;border-top:1.5px solid #4298CC;border-right:1.5px solid #4298CC;"></span><span style="position:absolute;bottom:0;left:0;width:5px;height:5px;border-bottom:1.5px solid #4298CC;border-left:1.5px solid #4298CC;"></span><span style="position:absolute;bottom:0;right:0;width:5px;height:5px;border-bottom:1.5px solid #4298CC;border-right:1.5px solid #4298CC;"></span>iT</span></span></a>
+    <a href="https://inspektiq.io" class="footer-link" target="_blank" rel="noopener"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:11px;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:#5BC273;">iQ</span></span></a>
+    <a href="/inspektiv.html" class="footer-link"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:11px;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:#E05C8A;">iV</span></span><span style="margin-left:6px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.18em;">— COMING SOON</span></a>
     <a href="/#about" class="footer-link">About</a>
     <a href="/contact.html" class="footer-link">Contact</a>
   </div>
@@ -354,6 +426,12 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   }
   document.fonts.ready.then(function(){ requestAnimationFrame(stretchTagline); });
   window.addEventListener('resize', stretchTagline);
+
+  // Calendar graphic: set highlighted slot to today's day-of-month so it never looks stale.
+  (function setCalendarToday(){
+    var el = document.getElementById('iv-cal-today-num');
+    if (el) el.textContent = new Date().getDate();
+  })();
 
   async function submitIV(e) {
     e.preventDefault();
