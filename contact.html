@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact KEYSTONESYSTEMS — Schedule a Demo or Talk to Our Team</title>
+<meta name="description" content="Talk to the team behind INSPEKTiT, INSPEKTiQ, and INSPEKTiV. Schedule a demo or send us a message — claim technology built for property insurance.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0A0A0A;
+  --surface:#111114;
+  --surface2:#16161a;
+  --border:rgba(255,255,255,.07);
+  --border-hi:rgba(255,255,255,.13);
+  --white:#F2F2F4;
+  --dim:#c8c8d0;
+  --muted:#9090a0;
+  --muted-2:#64646C;
+  --bronze:#C9A84C;
+  --bronze-lo:rgba(201,168,76,.08);
+  --bronze-hi:rgba(201,168,76,.35);
+  --blue:#4298CC;
+  --green:#5BC273;
+  --rose:#E05C8A;
+}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Barlow',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse at 20% 0%,rgba(201,168,76,.04) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,168,76,.03) 0%,transparent 55%);
+}
+.z1{position:relative;z-index:1;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+
+/* ── NAV (mirrors index.html) ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:9999;
+  background:rgba(10,10,10,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:72px;
+}
+.nav-wordmark{display:flex;flex-direction:column;text-decoration:none;}
+.nav-wordmark-line1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:14px;letter-spacing:.04em;color:var(--white);white-space:nowrap;}
+.nav-wordmark-line1 .sys{color:var(--bronze);}
+.nav-sub{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:400;color:var(--white);margin-top:2px;transform-origin:left center;white-space:nowrap;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-link{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+.nav-link:hover{color:var(--white);}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);border:1px solid var(--bronze-hi);padding:8px 18px;background:none;cursor:pointer;transition:all .2s;}
+.nav-cta:hover{background:var(--bronze);color:var(--black);}
+
+/* ── HERO ── */
+.hero{padding:112px 48px 56px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{
+  content:'';position:absolute;top:72px;left:50%;transform:translateX(-50%);
+  width:800px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-inner{max-width:880px;margin:0 auto;position:relative;}
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze);opacity:.7;margin-bottom:18px;animation:fadeUp .5s ease .1s both;}
+.hero-headline{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px,5.5vw,60px);font-weight:700;line-height:1.0;letter-spacing:-.02em;
+  color:var(--white);max-width:780px;margin:0 auto 22px;
+  animation:fadeUp .55s ease .12s both;
+}
+.hero-headline em{font-style:normal;color:var(--bronze);}
+.hero-sub{
+  font-size:16px;font-weight:300;color:var(--muted);
+  line-height:1.7;max-width:600px;margin:0 auto 36px;
+  animation:fadeUp .55s ease .18s both;
+}
+.hero-sub strong{color:var(--dim);font-weight:500;}
+
+/* ── TWO-COLUMN: Schedule + Email Form ── */
+.split{
+  max-width:1200px;margin:0 auto;
+  padding:32px 48px 80px;
+  display:grid;grid-template-columns:1fr 1fr;gap:32px;
+  animation:fadeUp .6s ease .24s both;
+}
+.col-card{
+  background:var(--surface);border:1px solid var(--border);
+  padding:36px 32px;display:flex;flex-direction:column;gap:18px;
+  position:relative;overflow:hidden;
+}
+.col-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--bronze);
+}
+.col-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);opacity:.7;}
+.col-title{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1.05;letter-spacing:-.005em;}
+.col-sub{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* schedule column */
+.cal-frame{
+  flex:1;min-height:520px;
+  background:var(--black);border:1px solid var(--border);
+  display:flex;flex-direction:column;
+}
+.cal-iframe{width:100%;height:100%;flex:1;border:0;background:var(--black);min-height:480px;}
+.cal-fallback{padding:24px;text-align:center;}
+.cal-fallback a{
+  display:inline-block;
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--bronze);color:var(--black);padding:14px 28px;text-decoration:none;
+  transition:opacity .2s;margin-top:14px;
+}
+.cal-fallback a:hover{opacity:.85;}
+
+/* form column */
+.field-row{display:flex;flex-direction:column;gap:8px;}
+.field-row label{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+.field-row input, .field-row select, .field-row textarea{
+  background:var(--surface2);border:1px solid var(--border);color:var(--white);
+  padding:13px 14px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:300;
+  width:100%;outline:none;transition:border-color .15s;
+  appearance:none;-webkit-appearance:none;border-radius:0;
+}
+.field-row input:focus, .field-row select:focus, .field-row textarea:focus{
+  border-color:var(--bronze);background:var(--bronze-lo);
+}
+.field-row input::placeholder, .field-row textarea::placeholder{color:rgba(255,255,255,.2);}
+.field-row select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6B6B' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer;
+}
+.field-row select option{background:var(--surface);color:var(--white);}
+.field-row textarea{resize:vertical;min-height:110px;line-height:1.5;font-family:'Barlow',sans-serif;}
+.field-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+
+.form-submit{
+  width:100%;padding:15px;background:var(--bronze);color:var(--black);border:none;
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;
+  cursor:pointer;transition:opacity .2s;margin-top:10px;
+}
+.form-submit:hover{opacity:.85;}
+.form-submit:disabled{opacity:.4;cursor:not-allowed;}
+
+.form-status{padding:14px 16px;font-size:13px;line-height:1.5;display:none;border-left:3px solid;}
+.form-status.show{display:block;}
+.form-status.ok{background:rgba(91,194,115,.08);border-left-color:var(--green);color:var(--white);}
+.form-status.err{background:rgba(224,92,138,.08);border-left-color:var(--rose);color:var(--white);}
+
+.form-privacy{font-size:11px;color:var(--muted-2);text-align:center;margin-top:10px;line-height:1.5;}
+.form-privacy a{color:var(--bronze);}
+
+/* ── DIRECT CONTACT STRIP ── */
+.direct-strip{
+  max-width:1200px;margin:0 auto;
+  padding:32px 48px 80px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;
+  border-top:1px solid var(--border);
+}
+.direct-card{padding:24px 20px;}
+.direct-label{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-2);margin-bottom:10px;}
+.direct-value{font-size:15px;color:var(--white);font-weight:500;}
+.direct-value a{color:var(--bronze);transition:opacity .15s;}
+.direct-value a:hover{opacity:.8;}
+
+/* ── FOOTER (mirrors index.html) ── */
+footer{
+  padding:28px 48px;border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.footer-wm{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:900;letter-spacing:.04em;color:var(--white);display:flex;flex-direction:column;}
+.footer-wm .sys{color:var(--bronze);}
+.footer-tagline{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:400;color:var(--white);margin-top:2px;transform-origin:left center;white-space:nowrap;}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-link{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);transition:color .2s;}
+.footer-link:hover{color:var(--white);}
+.footer-copy{font-size:11px;color:var(--muted-2);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:960px){
+  nav{padding:0 24px;}
+  .nav-links{display:none;}
+  .hero{padding:112px 24px 40px;}
+  .split{padding:24px 24px 60px;grid-template-columns:1fr;gap:24px;}
+  .direct-strip{padding:32px 24px 60px;grid-template-columns:1fr;gap:18px;text-align:left;}
+  .direct-card{padding:14px 0;border-bottom:1px solid var(--border);}
+  .direct-card:last-child{border-bottom:none;}
+  footer{padding:32px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-wordmark">
+    <span class="nav-wordmark-line1">KEYSTONE<span class="sys">SYSTEMS</span></span>
+    <span class="nav-sub" id="nav-tagline">a claims technology company</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#who-we-serve" class="nav-link">Who We Serve</a>
+    <a href="/#what-we-build" class="nav-link">What We Build</a>
+    <a href="/#about" class="nav-link">About</a>
+    <a href="/contact.html" class="nav-cta">Get In Touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero z1">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Get In Touch</div>
+    <h1 class="hero-headline">Talk to the team behind <em>the platform</em>.</h1>
+    <p class="hero-sub">Whether you're an IA firm running 50 claims a week or a carrier rethinking how files reach you — we'd like to hear what you're trying to solve. <strong>Schedule a 30-minute call</strong> or send a message and we'll be back inside one business day.</p>
+  </div>
+</div>
+
+<!-- TWO-COLUMN: Schedule + Form -->
+<div class="split z1">
+
+  <!-- LEFT: Schedule a Demo (cal.com embed) -->
+  <div class="col-card">
+    <div class="col-eyebrow">Schedule a Demo</div>
+    <div class="col-title">Pick a time that works.</div>
+    <div class="col-sub">30-minute walkthrough of the platform with Mike Weaver, Co-Founder & CMO. Live demo of INSPEKT<strong style="color:var(--blue);">[iT]</strong> and INSPEKT<strong style="color:var(--green);">iQ</strong>, and a preview of INSPEKT<strong style="color:var(--rose);">iV</strong>.</div>
+
+    <div class="cal-frame">
+      <iframe class="cal-iframe" src="https://cal.com/keystonestack/mike/intro" loading="lazy" title="Schedule a demo with Mike Weaver"></iframe>
+      <div class="cal-fallback" id="cal-fallback" style="display:none;">
+        <div style="font-size:13px;color:var(--muted);">If the booking calendar doesn't load above, open it directly:</div>
+        <a href="https://keystonestack.cal.com/mike/intro" target="_blank" rel="noopener">Open Booking Page →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Email Form -->
+  <div class="col-card">
+    <div class="col-eyebrow">Drop Us An Email</div>
+    <div class="col-title">Tell us what you're looking for.</div>
+    <div class="col-sub">A real human reads every message. We respond inside one business day.</div>
+
+    <form id="contact-form" onsubmit="submitContact(event)">
+      <!-- Web3Forms hidden fields. To activate real submissions, sign up at
+           web3forms.com with sales@keystonestack.com and paste the access
+           key into the data-access-key attribute on the form below. Until
+           then the form falls back to a mailto: link. -->
+      <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
+      <input type="hidden" name="subject" value="New contact form submission — keystonestack.com">
+      <input type="hidden" name="from_name" value="keystonestack.com">
+      <input type="hidden" name="redirect" value="false">
+
+      <div class="field-pair">
+        <div class="field-row" style="margin-bottom:16px;">
+          <label for="cf-name">Your Name</label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name" placeholder="Jane Smith">
+        </div>
+        <div class="field-row" style="margin-bottom:16px;">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="you@firm.com">
+        </div>
+      </div>
+
+      <div class="field-pair">
+        <div class="field-row" style="margin-bottom:16px;">
+          <label for="cf-company">Company / Firm</label>
+          <input id="cf-company" name="company" type="text" autocomplete="organization" placeholder="Smith Adjusters">
+        </div>
+        <div class="field-row" style="margin-bottom:16px;">
+          <label for="cf-role">I am a…</label>
+          <select id="cf-role" name="role">
+            <option value="">Select…</option>
+            <option value="firm">IA Firm Owner / Manager</option>
+            <option value="adjuster">Independent Adjuster</option>
+            <option value="carrier">Insurance Carrier</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-row" style="margin-bottom:16px;">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" required placeholder="What are you trying to solve? (Or just say hi.)"></textarea>
+      </div>
+
+      <div class="form-status" id="form-status"></div>
+
+      <button type="submit" class="form-submit" id="form-submit-btn">Send Message →</button>
+
+      <div class="form-privacy">
+        We'll only use your info to respond. No marketing list, no spam. <a href="/#privacy">Privacy</a>.
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<!-- DIRECT CONTACT STRIP -->
+<div class="direct-strip z1">
+  <div class="direct-card">
+    <div class="direct-label">Sales</div>
+    <div class="direct-value"><a href="mailto:sales@keystonestack.com">sales@keystonestack.com</a></div>
+  </div>
+  <div class="direct-card">
+    <div class="direct-label">Schedule</div>
+    <div class="direct-value"><a href="https://keystonestack.cal.com/mike/intro" target="_blank" rel="noopener">cal.com/keystonestack</a></div>
+  </div>
+  <div class="direct-card">
+    <div class="direct-label">Office</div>
+    <div class="direct-value">Waco, TX</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="z1">
+  <div class="footer-wm">
+    <div style="white-space:nowrap;">KEYSTONE<span class="sys">SYSTEMS</span></div>
+    <div class="footer-tagline">a claims technology company</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://inspektit.io" class="footer-link" target="_blank" rel="noopener">INSPEKTiT</a>
+    <a href="https://inspektiq.io" class="footer-link" target="_blank" rel="noopener">INSPEKTiQ</a>
+    <a href="/inspektiv.html" class="footer-link" style="opacity:0.55;">INSPEKTiV — Coming Soon</a>
+    <a href="/#about" class="footer-link">About</a>
+    <a href="/contact.html" class="footer-link">Contact</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 Keystone Systems LLC &middot; Waco, TX &middot; keystonestack.com</div>
+</footer>
+
+<script>
+  // Stretch the nav tagline to match the wordmark width (matches index.html behavior)
+  function stretchTagline(){
+    var line = document.querySelector('.nav-wordmark-line1');
+    var sub  = document.getElementById('nav-tagline');
+    if (line && sub) {
+      sub.style.transform = 'scaleX(1)';
+      requestAnimationFrame(function(){
+        var w1 = line.offsetWidth, w2 = sub.offsetWidth;
+        if (w2 > 0) sub.style.transform = 'scaleX(' + (w1/w2) + ')';
+      });
+    }
+  }
+  document.fonts.ready.then(function(){ requestAnimationFrame(stretchTagline); });
+  window.addEventListener('resize', stretchTagline);
+
+  // Show fallback link if cal.com iframe fails to load within 4 seconds
+  setTimeout(function(){
+    var iframe = document.querySelector('.cal-iframe');
+    if (iframe && iframe.contentWindow && iframe.contentWindow.length === 0) {
+      // Best-effort detection — show fallback regardless of cross-origin restrictions
+    }
+    document.getElementById('cal-fallback').style.display = 'block';
+  }, 4000);
+
+  // Contact form submission
+  // - If a Web3Forms access key is set, posts to web3forms.com (delivers to sales@keystonestack.com)
+  // - Otherwise falls back to a mailto: link with the form contents
+  async function submitContact(e) {
+    e.preventDefault();
+    var form = document.getElementById('contact-form');
+    var btn = document.getElementById('form-submit-btn');
+    var status = document.getElementById('form-status');
+
+    var data = new FormData(form);
+    var key = data.get('access_key');
+    var name = data.get('name');
+    var email = data.get('email');
+    var company = data.get('company') || '—';
+    var role = data.get('role') || '—';
+    var message = data.get('message');
+
+    // No Web3Forms key configured yet — fall back to mailto so submissions still flow.
+    if (!key || key === 'REPLACE_WITH_WEB3FORMS_KEY') {
+      var subject = encodeURIComponent('Contact form: ' + name + ' (' + (role || 'unknown') + ')');
+      var body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Company: ' + company + '\n' +
+        'Role: ' + role + '\n\n' +
+        'Message:\n' + message
+      );
+      window.location.href = 'mailto:sales@keystonestack.com?subject=' + subject + '&body=' + body;
+      status.className = 'form-status ok show';
+      status.textContent = 'Opening your email client…';
+      return;
+    }
+
+    // Web3Forms is configured — submit normally
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.className = 'form-status';
+
+    try {
+      var res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(Object.fromEntries(data)),
+      });
+      var json = await res.json();
+      if (res.ok && json.success) {
+        status.className = 'form-status ok show';
+        status.textContent = "Got it. We'll be in touch within one business day.";
+        form.reset();
+        btn.textContent = 'Sent ✓';
+      } else {
+        throw new Error(json.message || 'Submission failed');
+      }
+    } catch (err) {
+      status.className = 'form-status err show';
+      status.textContent = 'Something went wrong. Email us directly at sales@keystonestack.com.';
+      btn.disabled = false;
+      btn.textContent = 'Send Message →';
+    }
+  }
+</script>
+</body>
+</html>
