@@ -176,15 +176,13 @@ nav{
 /* RELATED PRODUCTS */
 .related{max-width:1100px;margin:0 auto;padding:24px 48px 80px;border-top:1px solid var(--border);}
 .related-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-2);margin-bottom:24px;text-align:center;}
-.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;}
+.related-grid{display:grid;grid-template-columns:1fr;gap:3px;max-width:560px;margin:0 auto;}
 .related-card{background:var(--surface);border:1px solid var(--border);padding:24px 26px;display:flex;flex-direction:column;gap:8px;transition:border-color .2s;text-decoration:none;}
-.related-card.it::before, .related-card.iq::before{content:'';position:absolute;}
+.related-card.it::before{content:'';position:absolute;}
 .related-card.it{border-top:2px solid #4298CC;}
-.related-card.iq{border-top:2px solid #5BC273;}
 .related-card:hover{border-color:var(--border-hi);}
 .related-wm{font-family:'Orbitron',sans-serif;font-weight:900;font-size:14px;letter-spacing:.04em;color:var(--white);}
 .related-it .acc{color:#4298CC;}
-.related-iq .acc{color:#5BC273;}
 .related-desc{font-size:13px;color:var(--muted);line-height:1.5;}
 .related-cta{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--white);opacity:.75;margin-top:6px;}
 
@@ -390,13 +388,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   <div class="related-grid">
     <a class="related-card it related-it" href="https://inspektit.io" target="_blank" rel="noopener">
       <span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:14px;letter-spacing:.04em;color:var(--white);display:inline-flex;align-items:center;">INSPEKT<span style="position:relative;display:inline-flex;align-items:center;padding:1px 5px;margin-left:2px;"><span style="position:absolute;top:0;left:0;width:5px;height:5px;border-top:1.5px solid #4298CC;border-left:1.5px solid #4298CC;"></span><span style="position:absolute;top:0;right:0;width:5px;height:5px;border-top:1.5px solid #4298CC;border-right:1.5px solid #4298CC;"></span><span style="position:absolute;bottom:0;left:0;width:5px;height:5px;border-bottom:1.5px solid #4298CC;border-left:1.5px solid #4298CC;"></span><span style="position:absolute;bottom:0;right:0;width:5px;height:5px;border-bottom:1.5px solid #4298CC;border-right:1.5px solid #4298CC;"></span>iT</span></span>
-      <div class="related-desc">Field documentation app. Guided inspection workflow, auto-labeled photos, GLR generated at the property.</div>
+      <div class="related-desc">The Claims Platform. Built in the field. Scaled at the firm. Intake, assignment, guided inspection, review, and carrier submission — one platform.</div>
       <div class="related-cta">Visit inspektit.io →</div>
-    </a>
-    <a class="related-card iq related-iq" href="https://inspektiq.io" target="_blank" rel="noopener">
-      <span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:14px;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:#5BC273;">iQ</span></span>
-      <div class="related-desc">Firm operations platform. Intake, assignment, review, carrier-ready submission — without the spreadsheets.</div>
-      <div class="related-cta">Visit inspektiq.io →</div>
     </a>
   </div>
 </div>
@@ -409,7 +402,6 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   </div>
   <div class="footer-links">
     <a href="https://inspektit.io" class="footer-link" target="_blank" rel="noopener"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:11px;letter-spacing:.04em;color:var(--white);display:inline-flex;align-items:center;">INSPEKT<span style="position:relative;display:inline-flex;align-items:center;padding:1px 5px;margin-left:2px;"><span style="position:absolute;top:0;left:0;width:5px;height:5px;border-top:1.5px solid #4298CC;border-left:1.5px solid #4298CC;"></span><span style="position:absolute;top:0;right:0;width:5px;height:5px;border-top:1.5px solid #4298CC;border-right:1.5px solid #4298CC;"></span><span style="position:absolute;bottom:0;left:0;width:5px;height:5px;border-bottom:1.5px solid #4298CC;border-left:1.5px solid #4298CC;"></span><span style="position:absolute;bottom:0;right:0;width:5px;height:5px;border-bottom:1.5px solid #4298CC;border-right:1.5px solid #4298CC;"></span>iT</span></span></a>
-    <a href="https://inspektiq.io" class="footer-link" target="_blank" rel="noopener"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:11px;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:#5BC273;">iQ</span></span></a>
     <a href="/inspektiv.html" class="footer-link"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:11px;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:#E05C8A;">iV</span></span><span style="margin-left:6px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.18em;">— COMING SOON</span></a>
     <a href="/#about" class="footer-link">About</a>
     <a href="/contact.html" class="footer-link">Contact</a>

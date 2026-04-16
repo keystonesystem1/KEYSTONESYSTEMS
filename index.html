@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keystone Systems | Claims Adjusting Software & Dispatch Tools</title>
-<meta name="description" content="Claims management software for IA firms. Dispatch adjusters in real time, source talent outside your roster, and deliver assignments instantly with Keystone.">
+<title>Keystone Systems | Claims Adjusting Software — Intake to Carrier</title>
+<meta name="description" content="Claims management software for IA firms and independent adjusters. INSPEKTiT handles intake, assignment, field inspection, review, and carrier submission in one platform. Built in the field. Scaled at the firm.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="keywords" content="claims adjusting software, adjuster dispatch, IA firm software, independent adjusting, roster management, claims management platform, InspektiQ, InspektiV, InspektiT">
+<meta name="keywords" content="claims adjusting software, adjuster dispatch, IA firm software, independent adjusting, roster management, claims management platform, InspektiT, InspektiV, field inspection app, claims intake, carrier submission">
 <link rel="canonical" href="https://keystonestack.com/">
-<meta property="og:title" content="Keystone Systems | Claims Adjusting Software & Dispatch Tools">
-<meta property="og:description" content="Claims management software for IA firms. Dispatch adjusters in real time, source talent outside your roster, and deliver assignments instantly.">
+<meta property="og:title" content="Keystone Systems | Claims Adjusting Software — Intake to Carrier">
+<meta property="og:description" content="Claims management software for IA firms and independent adjusters. Intake to carrier submission, all in one platform. Built in the field. Scaled at the firm.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://keystonestack.com">
 <meta property="og:image" content="https://keystonestack.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Keystone Systems | Claims Adjusting Software & Dispatch Tools">
-<meta name="twitter:description" content="Claims management software for IA firms. Dispatch, source, and assign adjusters — all from one platform.">
+<meta name="twitter:title" content="Keystone Systems | Claims Adjusting Software — Intake to Carrier">
+<meta name="twitter:description" content="One platform — intake, assignment, inspection, review, and carrier submission. Built in the field. Scaled at the firm.">
 <link rel="stylesheet" href="assets/css/shared.css">
 <script type="application/ld+json">
 {
@@ -25,7 +25,7 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "url": "https://keystonestack.com",
-  "description": "Claims adjusting software suite for independent adjusting firms. Includes InspektiQ for real-time dispatch and roster management, InspektiV for sourcing adjusters outside your roster, and InspektiT for instant assignment delivery.",
+  "description": "Claims adjusting software for independent adjusting firms and independent adjusters. INSPEKTiT handles the full claim lifecycle — intake, assignment, field inspection, review, and carrier submission — in one platform. INSPEKTiV (coming soon) is the NIPR-verified adjuster marketplace for sourcing talent outside your roster.",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -38,11 +38,13 @@
     "url": "https://keystonestack.com"
   },
   "featureList": [
-    "Real-time adjuster dispatch",
+    "Claim intake and structured capture",
+    "Real-time adjuster assignment and dispatch",
     "Roster management",
-    "Adjuster sourcing and onboarding",
-    "Instant assignment delivery",
-    "Claims workflow automation"
+    "Guided field inspection with auto-labeled photo packages",
+    "Structured file review and quality checks",
+    "Carrier-ready reporting and submission pipeline",
+    "NIPR-verified adjuster marketplace (coming soon)"
   ]
 }
 </script>
@@ -237,8 +239,10 @@
 
   .stack-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 3px;
+    max-width: 1080px;
+    margin: 0 auto;
   }
 
   .stack-item {
@@ -648,6 +652,225 @@
     content: '';
     position: absolute; top: 0; left: 0; right: 0; height: 2px;
     background: var(--rose);
+  }
+
+  /* ══════════════════════════
+     WHO WE SERVE — unified 3-col audience section
+  ══════════════════════════ */
+  .aud-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 28px;
+    max-width: 1280px;
+    margin-left: auto; margin-right: auto;
+  }
+  .aud-col{
+    display: flex; flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+  }
+  .aud-header{
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--aud-accent);
+  }
+  .aud-label{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase;
+    color: var(--aud-accent);
+    margin-bottom: 6px;
+    opacity: .9;
+  }
+  .aud-title{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    letter-spacing: -.005em;
+  }
+  .aud-pain{
+    font-family:'Barlow',sans-serif;
+    font-size: 12.5px; font-weight: 400;
+    color: #9898a8;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .aud-points{
+    list-style: none;
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 0; margin: 0;
+  }
+  .aud-points li{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size: 12.5px; font-weight: 700;
+    color: #9898a8;
+    padding-left: 12px;
+    position: relative;
+    line-height: 1.35;
+  }
+  .aud-points li::before{
+    content: '';
+    position: absolute; left: 0; top: 7px;
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--aud-accent);
+    opacity: .65;
+  }
+  /* Product tile — flip card (matches backup presentation, compact for 3-col grid) */
+  .aud-product{
+    position: relative;
+    perspective: 1100px;
+    cursor: pointer;
+    min-height: 200px;
+  }
+  .aud-product-inner{
+    position: relative;
+    width: 100%; min-height: 200px;
+    transition: transform .52s cubic-bezier(.4,0,.2,1);
+    transform-style: preserve-3d;
+  }
+  .aud-product.flipped .aud-product-inner{
+    transform: rotateY(180deg);
+  }
+  .aud-product-face{
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 18px 20px;
+    display: flex; flex-direction: column;
+    transition: border-color .25s;
+    overflow: hidden;
+  }
+  .aud-product-face::before{
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--prod-accent);
+  }
+  .aud-product:hover .aud-product-face{
+    border-color: color-mix(in srgb, var(--prod-accent) 35%, transparent);
+  }
+  .aud-product-back{
+    transform: rotateY(180deg);
+  }
+  .aud-product-header{
+    display: flex; flex-direction: column; gap: 6px;
+    margin-bottom: 10px;
+  }
+  .aud-product-wm{
+    font-family:'Orbitron',sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: .04em;
+    color: var(--white);
+    display: inline-flex; align-items: center;
+  }
+  .aud-product-tagline{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--prod-accent);
+    line-height: 1.3;
+  }
+  .aud-product-desc{
+    font-family:'Barlow',sans-serif;
+    font-size: 12px; font-weight: 400;
+    color: var(--muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .aud-product-hint{
+    margin-top: auto;
+    display: flex; align-items: center; gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+  .aud-product-hint-icon{
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 16px; height: 16px;
+    border: 1px solid color-mix(in srgb, var(--prod-accent) 45%, transparent);
+    border-radius: 2px;
+    font-size: 9px;
+    color: var(--prod-accent);
+    flex-shrink: 0;
+    animation: aud-hint-spin 3s ease-in-out infinite;
+  }
+  @keyframes aud-hint-spin{
+    0%, 70%, 100% { transform: rotateY(0deg); }
+    35%           { transform: rotateY(160deg); }
+  }
+  .aud-product-hint-text{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: .2em; text-transform: uppercase;
+    color: var(--muted-2);
+    transition: color .2s;
+  }
+  .aud-product:hover .aud-product-hint-text{ color: var(--prod-accent); }
+  .aud-product-features{
+    list-style: none;
+    font-family:'Barlow',sans-serif;
+    font-size: 12px; font-weight: 400;
+    color: var(--muted);
+    display: flex; flex-direction: column; gap: 5px;
+    margin: 0 0 auto; padding: 0;
+  }
+  .aud-product-features li{
+    padding-left: 12px; position: relative;
+    line-height: 1.45;
+  }
+  .aud-product-features li::before{
+    content: ''; position: absolute;
+    left: 0; top: 7px;
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--prod-accent);
+    opacity: .7;
+  }
+  .aud-product-back-label{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase;
+    color: var(--prod-accent);
+    margin-bottom: 10px;
+  }
+  .aud-product-back-row{
+    margin-top: auto;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+  .aud-product-cta{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--prod-accent);
+    text-decoration: none;
+  }
+  .aud-product-cta:hover{ opacity: .8; }
+  .aud-product-flipback{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--muted-2);
+    background: none; border: none; cursor: pointer;
+    padding: 0;
+  }
+  .aud-product-flipback:hover{ color: var(--white); }
+
+  /* Tighter padding on the Who We Serve section so full grid fits in viewport */
+  #who-we-serve{
+    padding: 44px 48px 48px;
+    max-width: 1320px;
+  }
+  #who-we-serve .section-eyebrow{ text-align: center; }
+  #who-we-serve .section-heading{ margin-bottom: 12px; text-align: center; }
+  #who-we-serve .section-sub{ margin-bottom: 20px; max-width: 680px; margin-left: auto; margin-right: auto; text-align: center; }
+  #who-we-serve .section-rule{ margin-bottom: 24px; }
+
+  @media(max-width: 900px){
+    .aud-grid{ grid-template-columns: 1fr; gap: 18px; }
+    #who-we-serve{ padding: 44px 24px; }
   }
 
   /* ══════════════════════════
@@ -1072,18 +1295,8 @@
             <span style="font-family:'Orbitron',sans-serif; font-weight:900; font-size:16px; color:var(--white); line-height:1; display:inline-flex; align-items:center;"><span style="position:relative; display:inline-flex; align-items:center; padding:2px 5px;"><span style="position:absolute;top:0;left:0;width:6px;height:6px;border-top:1.5px solid var(--blue);border-left:1.5px solid var(--blue);"></span><span style="position:absolute;top:0;right:0;width:6px;height:6px;border-top:1.5px solid var(--blue);border-right:1.5px solid var(--blue);"></span><span style="position:absolute;bottom:0;left:0;width:6px;height:6px;border-bottom:1.5px solid var(--blue);border-left:1.5px solid var(--blue);"></span><span style="position:absolute;bottom:0;right:0;width:6px;height:6px;border-bottom:1.5px solid var(--blue);border-right:1.5px solid var(--blue);"></span>iT</span></span>
           </div>
           <div class="stack-text">
-            <div class="stack-name">Field Capture</div>
-            <div class="stack-desc">Guided inspection workflows that structure data, label photos, and generate documentation at the point of inspection — before the adjuster leaves the property</div>
-          </div>
-        </div>
-
-        <div class="stack-item">
-          <div class="stack-icon" style="background: rgba(91,194,115,.1); border-color: rgba(91,194,115,.2);">
-            <span style="font-family:'Orbitron',sans-serif; font-weight:900; font-size:16px; color:var(--green); line-height:1;">iQ</span>
-          </div>
-          <div class="stack-text">
-            <div class="stack-name">Firm Operations</div>
-            <div class="stack-desc">End-to-end claim management covering intake, assignment, adjuster roster, file tracking, review, and carrier-ready reporting — all in one platform, no dev work required</div>
+            <div class="stack-name">The Claims Platform</div>
+            <div class="stack-desc">Built in the field. Scaled at the firm. Intake, assignment, guided inspection, review, and carrier-ready reporting — every stage of the claim, one platform, no dev work required</div>
           </div>
         </div>
 
@@ -1122,266 +1335,132 @@
   <p class="section-sub"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:.85em;letter-spacing:.03em;color:var(--white);vertical-align:baseline;">KEYSTONE<span style="color:var(--bronze);">SYSTEMS</span></span> developed products for every role in the property insurance chain — from the adjuster in the field to the firm running the operation to the carrier receiving the file.</p>
   <div class="section-rule"></div>
 
-  <!-- TABS -->
-  <div class="tabs-wrap">
-    <button class="tab-btn active" data-tab="firms" style="--tab-accent: var(--green);">Your Firm</button>
-    <button class="tab-btn" data-tab="adjusters" style="--tab-accent: var(--blue);">Your Adjusters</button>
-    <button class="tab-btn" data-tab="carriers" style="--tab-accent: var(--bronze);">Your Clients</button>
-  </div>
+  <!-- UNIFIED 3-COLUMN AUDIENCE GRID -->
+  <div class="aud-grid">
 
-  <!-- TAB: IA FIRMS -->
-  <div class="tab-panel active" id="tab-firms">
-    <div class="audience-layout">
-
-      <div class="pain-panel" style="--panel-accent: var(--green);">
-        <div class="pain-label">The Problem</div>
-        <div class="pain-who">Your firm is in danger. You likely don't know it yet.</div>
-        <p class="pain-text">Every step of the current claims process has friction — from intake to carrier submission. Most firms don't see it because it's baked into how they've always operated. <span style="font-family:'Orbitron',sans-serif; font-weight:900; font-size:.92em; letter-spacing:.04em; color:var(--white);">KEYSTONE<span style="color:var(--bronze);">SYSTEMS</span></span> developed a product suite specifically to solve that friction at every stage — so firms can focus on relationships and revenue instead of managing the operation.</p>
-        <ul class="pain-points">
-          <li>Intake managed through email threads and spreadsheets</li>
-          <li>Adjuster assignment done manually with no real-time visibility</li>
-          <li>Reviews stall because files aren't structured consistently</li>
-          <li>Carrier submissions bounce back — costing time and credibility</li>
-          <li>Leadership buried in operations instead of growing the firm</li>
-        </ul>
+    <!-- ─── Your Firm ─── -->
+    <div class="aud-col" style="--aud-accent: var(--green);">
+      <div class="aud-header">
+        <div class="aud-label">Your Firm</div>
+        <div class="aud-title">Your firm is in danger.<br>You likely don't know it yet.</div>
       </div>
-
-      <div class="products-panel">
-
-        <!-- INSPEKTiQ flip card -->
-        <div class="pfc-wrap" style="--prod-accent: var(--green);" onclick="this.classList.toggle('flipped')">
-          <div class="pfc-inner">
-            <div class="pfc-face">
-              <div class="pfc-prod-header">
-                <div class="pfc-prod-wm"><span class="brand-iq">INSPEKT<span class="acc">iQ</span></span></div>
-                <div class="pfc-tagline">Sell more. Operate less.</div>
-              </div>
-              <p class="pfc-desc">The complete firm platform — intake, assignment, reporting, review, and carrier submission. Every stage of the claim cycle, without the friction.</p>
-              <div class="flip-hint-row">
-                <div class="flip-hint-icon">&#8634;</div>
-                <div class="flip-hint-text">Flip for key features</div>
-              </div>
+      <p class="aud-pain">Every step of the claims process has friction — intake to submission. Most firms don't see it because it's baked into how they operate. Keystone solves it at every stage so firms can focus on revenue, not operations.</p>
+      <ul class="aud-points">
+        <li>Intake via email threads and spreadsheets</li>
+        <li>Manual assignment with no real-time visibility</li>
+        <li>Reviews stall on inconsistent files</li>
+        <li>Carrier submissions bounce back</li>
+      </ul>
+      <div class="aud-product" style="--prod-accent: var(--blue);" onclick="this.classList.toggle('flipped')">
+        <div class="aud-product-inner">
+          <div class="aud-product-face">
+            <div class="aud-product-header">
+              <div class="aud-product-wm"><span class="brand-it">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></div>
+              <div class="aud-product-tagline">Intake to submission. One platform.</div>
             </div>
-            <div class="pfc-face pfc-back">
-              <div class="pfc-back-label">INSPEKTiQ — What It Does</div>
-              <ul class="pfc-features">
-                <li>Claim intake — no more missed files or email threads</li>
-                <li>Adjuster assignment with real-time availability</li>
-                <li>File review with structured quality checks</li>
-                <li>Carrier-ready reporting and submission pipeline</li>
-                <li>Full roster management — daily and CAT</li>
-              </ul>
-              <div class="flip-back-row">
-                <a href="#" class="pfc-cta">Learn more</a>
-                <button class="flip-back-btn" onclick="event.stopPropagation(); this.closest('.pfc-wrap').classList.remove('flipped')">Flip back</button>
-              </div>
+            <p class="aud-product-desc">The complete firm platform — intake, assignment, review, and carrier submission. Every stage of the claim, without the friction.</p>
+            <div class="aud-product-hint"><span class="aud-product-hint-icon">&#8634;</span><span class="aud-product-hint-text">Flip for key features</span></div>
+          </div>
+          <div class="aud-product-face aud-product-back">
+            <div class="aud-product-back-label">INSPEKTiT — For Firms</div>
+            <ul class="aud-product-features">
+              <li>Claim intake — no more missed files or email threads</li>
+              <li>Adjuster assignment with real-time availability</li>
+              <li>File review with structured quality checks</li>
+              <li>Carrier-ready reporting and submission pipeline</li>
+              <li>Full roster management — daily and CAT</li>
+            </ul>
+            <div class="aud-product-back-row">
+              <a href="#" class="aud-product-cta">Learn more</a>
+              <button class="aud-product-flipback" onclick="event.stopPropagation(); this.closest('.aud-product').classList.remove('flipped')">Flip back</button>
             </div>
           </div>
         </div>
-
-        <!-- INSPEKTiV flip card — firm perspective -->
-        <div class="pfc-wrap" style="--prod-accent: var(--rose);" onclick="this.classList.toggle('flipped')">
-          <div class="pfc-inner">
-            <div class="pfc-face">
-              <div class="pfc-prod-header">
-                <div class="pfc-prod-wm"><span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span></div>
-                <div class="pfc-tagline">Find the adjusters you can't.</div>
-              </div>
-              <p class="pfc-desc">NIPR-verified marketplace of independent adjusters. Search by ZIP, license state, Xactimate/Symbility certifications, designations, and experience. Fill the coverage gaps your roster misses — without bloating the roster.</p>
-              <div class="flip-hint-row">
-                <div class="flip-hint-icon">&#8634;</div>
-                <div class="flip-hint-text">Flip for key features</div>
-              </div>
-            </div>
-            <div class="pfc-face pfc-back">
-              <div class="pfc-back-label"><span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span> — What It Does</div>
-              <ul class="pfc-features">
-                <li>NIPR-verified adjuster profiles — license data auto-validated</li>
-                <li>Search by ZIP, license state, certifications, and software</li>
-                <li>Lasso map with radius rings — target a loss, see who's nearby</li>
-                <li>Reveal contact on demand — no wasted cold outreach</li>
-                <li>Coverage-gap analysis — see where your roster falls short before the claim lands</li>
-              </ul>
-              <div class="flip-back-row">
-                <a href="/inspektiv.html" class="pfc-cta">Learn more</a>
-                <button class="flip-back-btn" onclick="event.stopPropagation(); this.closest('.pfc-wrap').classList.remove('flipped')">Flip back</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
-  </div>
 
-  <!-- TAB: ADJUSTERS -->
-  <div class="tab-panel" id="tab-adjusters">
-    <div class="audience-layout">
-
-      <div class="pain-panel" style="--panel-accent: var(--blue);">
-        <div class="pain-label">The Problem</div>
-        <div class="pain-who">Your Adjusters are losing money after the inspection is already done.</div>
-        <p class="pain-text">The field work is finished — but the file isn't. Photo sorting, labeling, and GLR writing follow adjusters home on every file. That's 1–2 hours of unpaid time per claim eating straight into per-file earnings. And getting on new firm rosters means cold calls that never go anywhere.</p>
-        <ul class="pain-points">
-          <li>Post-field admin consuming 1–2 hours per file</li>
-          <li>Photo sorting and labeling done manually after every inspection</li>
-          <li>GLR writing eating into time between deployments</li>
-          <li>Files submitted with inconsistencies that trigger callbacks</li>
-          <li>No visibility to firms outside their existing roster</li>
-        </ul>
+    <!-- ─── Your Adjusters ─── -->
+    <div class="aud-col" style="--aud-accent: var(--blue);">
+      <div class="aud-header">
+        <div class="aud-label">Your Adjusters</div>
+        <div class="aud-title">Your adjusters are losing money after the inspection is already done.</div>
       </div>
-
-      <div class="products-panel">
-
-        <!-- INSPEKTiT flip card -->
-        <div class="pfc-wrap" style="--prod-accent: var(--blue);" onclick="this.classList.toggle('flipped')">
-          <div class="pfc-inner">
-            <div class="pfc-face">
-              <div class="pfc-prod-header">
-                <div class="pfc-prod-wm"><span class="brand-it">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></div>
-                <div class="pfc-tagline">Inspect it. Check it. Done.</div>
-              </div>
-              <p class="pfc-desc">Field app that captures structured inspection data, auto-labels photos, and generates the GLR at inspection — complete file before you leave the property.</p>
-              <div class="flip-hint-row">
-                <div class="flip-hint-icon">&#8634;</div>
-                <div class="flip-hint-text">Flip for key features</div>
-              </div>
+      <p class="aud-pain">Field work is finished — but the file isn't. Photo sorting, labeling, and GLR writing follow adjusters home every claim. That's 1–2 hours of unpaid time per file, plus cold calls to new firms that never go anywhere.</p>
+      <ul class="aud-points">
+        <li>1–2 hours of post-field admin per file</li>
+        <li>Manual photo sorting and labeling</li>
+        <li>GLR writing between deployments</li>
+        <li>No visibility to firms outside existing roster</li>
+      </ul>
+      <div class="aud-product" style="--prod-accent: var(--blue);" onclick="this.classList.toggle('flipped')">
+        <div class="aud-product-inner">
+          <div class="aud-product-face">
+            <div class="aud-product-header">
+              <div class="aud-product-wm"><span class="brand-it">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></div>
+              <div class="aud-product-tagline">Inspect it. Check it. Done.</div>
             </div>
-            <div class="pfc-face pfc-back">
-              <div class="pfc-back-label">INSPEKTiT — What It Does</div>
-              <ul class="pfc-features">
-                <li>Guided, structured inspection workflow at the property</li>
-                <li>Auto-labeled, sorted photo packages — no manual sorting</li>
-                <li>General Loss Report (GLR) generated at inspection</li>
-                <li>Scope-only delivery — no Xactimate required</li>
-                <li>Complete file on first submission, zero callbacks</li>
-                <li>Eliminates post-field admin time entirely</li>
-              </ul>
-              <div class="flip-back-row">
-                <a href="#" class="pfc-cta">Learn more</a>
-                <button class="flip-back-btn" onclick="event.stopPropagation(); this.closest('.pfc-wrap').classList.remove('flipped')">Flip back</button>
-              </div>
+            <p class="aud-product-desc">Field app that captures structured inspection data, auto-labels photos, and generates the GLR at inspection — complete file before you leave the property.</p>
+            <div class="aud-product-hint"><span class="aud-product-hint-icon">&#8634;</span><span class="aud-product-hint-text">Flip for key features</span></div>
+          </div>
+          <div class="aud-product-face aud-product-back">
+            <div class="aud-product-back-label">INSPEKTiT — For Adjusters</div>
+            <ul class="aud-product-features">
+              <li>Guided, structured inspection workflow at the property</li>
+              <li>Auto-labeled, sorted photo packages — no manual sorting</li>
+              <li>General Loss Report (GLR) generated at inspection</li>
+              <li>Scope-only delivery — no Xactimate required</li>
+              <li>Eliminates post-field admin time entirely</li>
+            </ul>
+            <div class="aud-product-back-row">
+              <a href="#" class="aud-product-cta">Learn more</a>
+              <button class="aud-product-flipback" onclick="event.stopPropagation(); this.closest('.aud-product').classList.remove('flipped')">Flip back</button>
             </div>
           </div>
         </div>
-
-        <!-- INSPEKTiV flip card — adjuster perspective -->
-        <div class="pfc-wrap" style="--prod-accent: var(--rose);" onclick="this.classList.toggle('flipped')">
-          <div class="pfc-inner">
-            <div class="pfc-face">
-              <div class="pfc-prod-header">
-                <div class="pfc-prod-wm"><span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span></div>
-                <div class="pfc-tagline">One profile. Every firm.</div>
-              </div>
-              <p class="pfc-desc">NIPR-verified at signup. Visible to every subscribing firm in the network. Free for adjusters, forever. Four ways to join — text, email your resume, scan a QR code, or sign in with LinkedIn.</p>
-              <div class="flip-hint-row">
-                <div class="flip-hint-icon">&#8634;</div>
-                <div class="flip-hint-text">Flip for key features</div>
-              </div>
-            </div>
-            <div class="pfc-face pfc-back">
-              <div class="pfc-back-label"><span style="font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:.04em;color:var(--white);">INSPEKT<span style="color:var(--rose);">iV</span></span> — What It Does</div>
-              <ul class="pfc-features">
-                <li>NIPR verification at signup — no repeat license uploads</li>
-                <li>Visible to every subscribing firm automatically</li>
-                <li>Four onboarding paths — text, email, QR, LinkedIn</li>
-                <li>Self-service profile — Xactimate Address, Symbility ID, carriers worked</li>
-                <li>Free forever for adjusters — firms pay for access</li>
-              </ul>
-              <div class="flip-back-row">
-                <a href="/inspektiv.html" class="pfc-cta">Learn more</a>
-                <button class="flip-back-btn" onclick="event.stopPropagation(); this.closest('.pfc-wrap').classList.remove('flipped')">Flip back</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
-  </div>
 
-  <!-- TAB: CARRIERS -->
-  <div class="tab-panel" id="tab-carriers">
-    <div class="audience-layout">
-
-      <div class="pain-panel" style="--panel-accent: var(--bronze);">
-        <div class="pain-label">The Standard</div>
-        <div class="pain-who">Your Clients need consistent, complete files — not whatever came off the adjuster's laptop.</div>
-        <p class="pain-text">Inconsistent documentation across adjuster files creates review bottlenecks, slows closings, and forces callbacks that nobody has time for. The quality of what lands in the carrier's inbox depends entirely on who the adjuster is and what tools they used. It shouldn't.</p>
-        <ul class="pain-points">
-          <li>File quality varies wildly across adjusters and firms</li>
-          <li>Missing documentation triggers review delays and extended cycle times</li>
-          <li>Incomplete and error-filled GLRs extend revision and review time</li>
-          <li>Longer cycle times decrease customer retention while increasing LAE</li>
-        </ul>
+    <!-- ─── Your Clients ─── -->
+    <div class="aud-col" style="--aud-accent: var(--bronze);">
+      <div class="aud-header">
+        <div class="aud-label">Your Clients</div>
+        <div class="aud-title">Your clients need consistent, complete files — not whatever came off the adjuster's laptop.</div>
       </div>
-
-      <div class="products-panel">
-
-        <!-- INSPEKTiQ flip card -->
-        <div class="pfc-wrap" style="--prod-accent: var(--green);" onclick="this.classList.toggle('flipped')">
-          <div class="pfc-inner">
-            <div class="pfc-face">
-              <div class="pfc-prod-header">
-                <div class="pfc-prod-wm"><span class="brand-iq">INSPEKT<span class="acc">iQ</span></span></div>
-                <div class="pfc-tagline">Built to carrier standards from day one.</div>
-              </div>
-              <p class="pfc-desc">When firms run on INSPEKTiQ, carrier output is standardized by default — structured files, consistent reporting, and submission-ready documentation every time.</p>
-              <div class="flip-hint-row">
-                <div class="flip-hint-icon">&#8634;</div>
-                <div class="flip-hint-text">Flip for key features</div>
-              </div>
+      <p class="aud-pain">Inconsistent documentation across adjuster files creates review bottlenecks, slows closings, and forces callbacks. The quality of what lands in the carrier's inbox depends on who the adjuster is. It shouldn't.</p>
+      <ul class="aud-points">
+        <li>File quality varies across adjusters and firms</li>
+        <li>Missing documentation triggers review delays</li>
+        <li>Error-filled GLRs extend revision time</li>
+        <li>Longer cycles hurt retention, raise LAE</li>
+      </ul>
+      <div class="aud-product" style="--prod-accent: var(--blue);" onclick="this.classList.toggle('flipped')">
+        <div class="aud-product-inner">
+          <div class="aud-product-face">
+            <div class="aud-product-header">
+              <div class="aud-product-wm"><span class="brand-it">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></div>
+              <div class="aud-product-tagline">Standardized files. Every adjuster. Every time.</div>
             </div>
-            <div class="pfc-face pfc-back">
-              <div class="pfc-back-label">INSPEKTiQ — Carrier Benefits</div>
-              <ul class="pfc-features">
-                <li>Standardized file structure across all firms using iQ</li>
-                <li>Carrier-ready reporting built into every submission</li>
-                <li>Fewer review callbacks — files arrive complete</li>
-                <li>Consistent photo labeling and documentation format</li>
-                <li>Performance dashboards visible to firm and carrier</li>
-              </ul>
-              <div class="flip-back-row">
-                <a href="#" class="pfc-cta">Learn more</a>
-                <button class="flip-back-btn" onclick="event.stopPropagation(); this.closest('.pfc-wrap').classList.remove('flipped')">Flip back</button>
-              </div>
+            <p class="aud-product-desc">INSPEKTiT structures the claim at the field level and drives it through firm review to carrier submission — consistent files, regardless of which adjuster or firm completed them.</p>
+            <div class="aud-product-hint"><span class="aud-product-hint-icon">&#8634;</span><span class="aud-product-hint-text">Flip for key features</span></div>
+          </div>
+          <div class="aud-product-face aud-product-back">
+            <div class="aud-product-back-label">INSPEKTiT — Carrier Benefits</div>
+            <ul class="aud-product-features">
+              <li>Platform-enforced inspection structure — not adjuster-dependent</li>
+              <li>Consistent GLR format across every file submitted</li>
+              <li>Auto-labeled photo packages — no manual rework needed</li>
+              <li>Carrier-ready reporting built into every submission</li>
+              <li>Performance dashboards visible to firm and carrier</li>
+            </ul>
+            <div class="aud-product-back-row">
+              <a href="#" class="aud-product-cta">Learn more</a>
+              <button class="aud-product-flipback" onclick="event.stopPropagation(); this.closest('.aud-product').classList.remove('flipped')">Flip back</button>
             </div>
           </div>
         </div>
-
-        <!-- INSPEKTiT flip card -->
-        <div class="pfc-wrap" style="--prod-accent: var(--blue);" onclick="this.classList.toggle('flipped')">
-          <div class="pfc-inner">
-            <div class="pfc-face">
-              <div class="pfc-prod-header">
-                <div class="pfc-prod-wm"><span class="brand-it">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></div>
-                <div class="pfc-tagline">Standardized files. Every adjuster. Every time.</div>
-              </div>
-              <p class="pfc-desc">INSPEKTiT structures the inspection at the field level — the file that reaches the carrier is consistent regardless of which adjuster completed it.</p>
-              <div class="flip-hint-row">
-                <div class="flip-hint-icon">&#8634;</div>
-                <div class="flip-hint-text">Flip for key features</div>
-              </div>
-            </div>
-            <div class="pfc-face pfc-back">
-              <div class="pfc-back-label">INSPEKTiT — Carrier Benefits</div>
-              <ul class="pfc-features">
-                <li>Platform-enforced inspection structure — not adjuster-dependent</li>
-                <li>Consistent GLR format across every file submitted</li>
-                <li>Auto-labeled photo packages — no manual rework needed</li>
-                <li>Scope-only delivery reduces ambiguity in file review</li>
-                <li>First-submission complete files reduce review cycle time</li>
-              </ul>
-              <div class="flip-back-row">
-                <a href="#" class="pfc-cta">Learn more</a>
-                <button class="flip-back-btn" onclick="event.stopPropagation(); this.closest('.pfc-wrap').classList.remove('flipped')">Flip back</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
+
   </div>
 
 </section>
@@ -1399,13 +1478,13 @@
       <div class="build-card">
         <div class="build-num">01</div>
         <div class="build-title">Field <span>Technology</span></div>
-        <p class="build-body"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:.85em;letter-spacing:.03em;color:var(--white);vertical-align:baseline;">KEYSTONE<span style="color:var(--bronze);">SYSTEMS</span></span> developed field tools that capture structured inspection data, auto-label photo packages, and generate documentation at the property — eliminating post-field admin and delivering complete files on first submission.</p>
+        <p class="build-body"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:.85em;letter-spacing:.03em;color:var(--white);vertical-align:baseline;">KEYSTONE<span style="color:var(--bronze);">SYSTEMS</span></span> developed <span class="brand-it" style="font-size:.9em;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span> as the field foundation — guided inspection workflows that capture structured data, auto-label photo packages, and generate documentation at the property. Every claim starts with a complete, carrier-ready file.</p>
       </div>
 
       <div class="build-card">
         <div class="build-num">02</div>
-        <div class="build-title">Firm <span>Infrastructure</span></div>
-        <p class="build-body"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:.85em;letter-spacing:.03em;color:var(--white);vertical-align:baseline;">KEYSTONE<span style="color:var(--bronze);">SYSTEMS</span></span> developed a platform that runs IA firm operations end-to-end — intake, assignment, adjuster roster, reporting, review, and carrier submission — without the spreadsheets, workarounds, or dev cycles.</p>
+        <div class="build-title">Firm <span>Platform</span></div>
+        <p class="build-body"><span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:.85em;letter-spacing:.03em;color:var(--white);vertical-align:baseline;">KEYSTONE<span style="color:var(--bronze);">SYSTEMS</span></span> developed <span class="brand-it" style="font-size:.9em;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span> with the full capability of a complete claims management system. From claims intake, assignment, adjuster roster, reporting, review, and carrier submission — without the spreadsheets, workarounds, or dev cycles.</p>
       </div>
 
       <div class="build-card">
@@ -1439,8 +1518,8 @@
           <div class="hiw-stage-label">Claim Intake</div>
           <div class="hiw-stage-title">The claim comes in. Nothing falls through.</div>
           <p class="hiw-stage-body">Structured intake captures every claim detail from the moment it arrives — no email threads, no spreadsheets, no dropped files. The claim is in the system before anything else happens.</p>
-          <div class="hiw-product-tag" style="--tag-c: var(--green);">
-            <span class="brand-iq" style="font-size:10px;">INSPEKT<span class="acc">iQ</span></span>
+          <div class="hiw-product-tag" style="--tag-c: var(--blue);">
+            <span class="brand-it" style="font-size:10px;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span>
             <span class="hiw-tag-label">Claims Intake Module</span>
           </div>
         </div>
@@ -1456,18 +1535,14 @@
           <div class="hiw-stage-title">The right adjuster gets the assignment. Instantly.</div>
           <p class="hiw-stage-body">The firm either assigns the claim in real time and dispatches with a single action, or uses <span class="brand-iv">INSPEKT<span class="acc">iV</span></span> to find adjusters outside their roster to onboard. The appropriate adjuster receives the assignment through <span class="brand-it">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span> immediately — no back-and-forth, no missed windows.</p>
           <div class="hiw-tags-row">
-            <div class="hiw-product-tag" style="--tag-c: var(--green);">
-              <span class="brand-iq" style="font-size:10px;">INSPEKT<span class="acc">iQ</span></span>
+            <div class="hiw-product-tag" style="--tag-c: var(--blue);">
+              <span class="brand-it" style="font-size:10px;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span>
               <span class="hiw-tag-label">Dispatch &amp; Roster</span>
             </div>
             <a href="/inspektiv.html" class="hiw-product-tag" style="--tag-c: var(--rose); text-decoration:none;">
               <span class="brand-iv" style="font-size:10px;">INSPEKT<span class="acc">iV</span></span>
               <span class="hiw-tag-label">Coming Soon →</span>
             </a>
-            <div class="hiw-product-tag" style="--tag-c: var(--blue);">
-              <span class="brand-it" style="font-size:10px;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span>
-              <span class="hiw-tag-label">Assignment Delivery</span>
-            </div>
           </div>
         </div>
       </div>
@@ -1497,8 +1572,8 @@
           <div class="hiw-stage-label">Review</div>
           <div class="hiw-stage-title">The firm reviews. Nothing bounces back.</div>
           <p class="hiw-stage-body">Structured files flow directly into the firm's review queue. Because the inspection was captured correctly from the start, review is fast — no chasing adjusters for missing photos, no reformatting documentation.</p>
-          <div class="hiw-product-tag" style="--tag-c: var(--green);">
-            <span class="brand-iq" style="font-size:10px;">INSPEKT<span class="acc">iQ</span></span>
+          <div class="hiw-product-tag" style="--tag-c: var(--blue);">
+            <span class="brand-it" style="font-size:10px;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span>
             <span class="hiw-tag-label">Review Module</span>
           </div>
         </div>
@@ -1545,7 +1620,6 @@
   </div>
   <div class="footer-links">
     <a href="https://inspektit.io" class="footer-link" target="_blank" rel="noopener"><span class="brand-it" style="font-size:11px;">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></a>
-    <a href="https://inspektiq.io" class="footer-link" target="_blank" rel="noopener"><span class="brand-iq" style="font-size:11px;">INSPEKT<span class="acc">iQ</span></span></a>
     <a href="/inspektiv.html" class="footer-link"><span class="brand-iv" style="font-size:11px;">INSPEKT<span class="acc">iV</span></span><span style="margin-left:6px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.18em;">— COMING SOON</span></a>
     <a href="#" class="footer-link">About</a>
     <a href="#" class="footer-link">Contact</a>
@@ -1579,19 +1653,6 @@
   }
   document.fonts.ready.then(function() { requestAnimationFrame(stretchTaglines); });
   window.addEventListener('resize', stretchTaglines);
-
-  // Tab switching
-  var tabBtns = document.querySelectorAll('.tab-btn');
-  var tabPanels = document.querySelectorAll('.tab-panel');
-
-  tabBtns.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      tabBtns.forEach(function(t) { t.classList.remove('active'); });
-      tabPanels.forEach(function(p) { p.classList.remove('active'); });
-      tab.classList.add('active');
-      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
-    });
-  });
 
   // Modal
   function openIA() {
