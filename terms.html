@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Keystone Systems" />
+<meta property="og:url" content="https://keystonestack.com/terms.html" />
+<meta property="og:title" content="Terms of Service — Keystone Systems" />
+<meta property="og:description" content="Terms of Service for Keystone Systems and keystonestack.com." />
+<title>Terms of Service — Keystone Systems</title>
+<meta name="description" content="Terms of Service governing use of the Keystone Systems corporate website at keystonestack.com." />
+
+<link rel="stylesheet" href="/assets/css/shared.css" />
+
+<style>
+  /* ── Nav (matches index.html pattern) ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 48px;
+    background: rgba(9,9,9,0.92);
+    backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-wordmark { text-decoration: none; display: inline-block; line-height: 1; }
+  .nav-wordmark-line1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px; font-weight: 900;
+    letter-spacing: .04em;
+    color: var(--white);
+    display: block;
+    white-space: nowrap;
+  }
+  .nav-wordmark-line1 .sys { color: var(--bronze); }
+  .nav-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 400;
+    letter-spacing: .04em;
+    color: var(--dim);
+    display: block;
+    margin-top: 2px;
+    white-space: nowrap;
+  }
+  .nav-links { display: flex; align-items: center; gap: 40px; }
+  .nav-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-link:hover { color: var(--white); }
+  .nav-cta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--bronze);
+    border: 1px solid rgba(201,168,76,.35);
+    padding: 10px 24px;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+  }
+  .nav-cta:hover { background: var(--bronze); color: var(--black); }
+  @media (max-width: 760px) { .nav-links { display: none; } nav { padding: 14px 24px; } }
+
+  /* ── Page layout ── */
+  .page { padding-top: 140px; padding-bottom: 80px; }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 48px; }
+  @media (max-width: 760px) { .container { padding: 0 24px; } }
+
+  /* ── Hero ── */
+  .legal-hero { margin-bottom: 56px; }
+  .legal-hero .kicker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase;
+    color: var(--bronze);
+    margin-bottom: 18px;
+  }
+  .legal-hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(36px, 5.5vw, 56px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+  .legal-hero .updated {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px; color: var(--muted);
+    letter-spacing: .02em;
+  }
+
+  /* ── Legal body ── */
+  .legal-body { font-family: 'Barlow', sans-serif; font-size: 16px; line-height: 1.75; color: var(--dim); }
+  .legal-body .lede { font-size: 17.5px; color: var(--white); margin-bottom: 48px; line-height: 1.6; max-width: 780px; }
+  .legal-body h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px; font-weight: 800;
+    letter-spacing: .02em; text-transform: uppercase;
+    color: var(--white);
+    margin: 52px 0 16px;
+    display: flex; align-items: baseline; gap: 16px;
+  }
+  .legal-body h2 .num {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px; font-weight: 900;
+    color: var(--bronze); letter-spacing: .1em;
+    min-width: 30px;
+  }
+  .legal-body h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px; font-weight: 700;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: var(--white);
+    margin: 32px 0 12px;
+    display: flex; align-items: baseline; gap: 14px;
+  }
+  .legal-body h3 .num {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10.5px; font-weight: 900;
+    color: var(--bronze); letter-spacing: .08em;
+    min-width: 26px;
+  }
+  .legal-body p { margin: 0 0 16px; }
+  .legal-body strong { font-weight: 600; color: var(--white); }
+  .legal-body a { color: var(--bronze); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,.35); transition: border-color .2s; }
+  .legal-body a:hover { border-bottom-color: var(--bronze); }
+  .legal-body ul { margin: 10px 0 20px 22px; padding: 0; }
+  .legal-body li { margin: 7px 0; color: var(--dim); }
+  .legal-body li strong { color: var(--white); }
+
+  /* ── Footer ── */
+  footer {
+    margin-top: 80px;
+    padding: 52px 48px 30px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+  .foot-inner { max-width: 1100px; margin: 0 auto; }
+  .foot-top { display: flex; justify-content: space-between; gap: 48px; flex-wrap: wrap; margin-bottom: 36px; }
+  .foot-brand { max-width: 380px; }
+  .foot-brand .wm {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px; font-weight: 900;
+    letter-spacing: .04em;
+    color: var(--white); margin-bottom: 10px; display: block;
+  }
+  .foot-brand .wm .sys { color: var(--bronze); }
+  .foot-brand p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px; color: var(--muted); line-height: 1.55;
+  }
+  .foot-links { display: flex; gap: 40px; flex-wrap: wrap; }
+  .foot-col h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--dim); margin-bottom: 10px;
+  }
+  .foot-col a {
+    display: block;
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px; color: var(--muted);
+    text-decoration: none; padding: 4px 0;
+    transition: color .2s;
+  }
+  .foot-col a:hover { color: var(--white); }
+  .foot-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    font-family: 'Barlow', sans-serif;
+    font-size: 11.5px; color: var(--muted-2);
+    letter-spacing: .02em;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-wordmark">
+    <span class="nav-wordmark-line1">KEYSTONE<span class="sys">SYSTEMS</span></span>
+    <span class="nav-sub">Claims adjusting software, built in the field.</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#build" class="nav-link">What We Build</a>
+    <a href="/#serve" class="nav-link">Who We Serve</a>
+    <a href="/contact.html" class="nav-link">Contact</a>
+    <a href="/account.html" class="nav-cta">Sign In</a>
+  </div>
+</nav>
+
+<main class="page">
+  <div class="container">
+
+    <section class="legal-hero">
+      <div class="kicker">Legal</div>
+      <h1>Terms of Service</h1>
+      <div class="updated">Last updated: April 23, 2026</div>
+    </section>
+
+    <div class="legal-body">
+      <p class="lede">These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of the <span class="brand-keystone">KEYSTONE<span class="sys">SYSTEMS</span></span> corporate website at keystonestack.com (the &ldquo;Website&rdquo;). By accessing or using the Website, you agree to be bound by these Terms.</p>
+
+      <h2><span class="num">01</span>Acceptance of Terms</h2>
+      <p>By accessing or using the Website, you confirm that you have read, understood, and agree to be bound by these Terms, along with our <a href="/privacy.html">Privacy Policy</a>. If you do not agree, do not use the Website.</p>
+
+      <h2><span class="num">02</span>About Keystone Systems</h2>
+      <p>Keystone Systems (&ldquo;Keystone,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is a software company that designs, builds, and operates products for the property insurance and independent adjusting industries. This Website is the corporate site for Keystone Systems. It describes who we are and the products we build, but it is not itself a product.</p>
+
+      <h2><span class="num">03</span>Our Products</h2>
+      <p>Keystone Systems builds and operates multiple software products. Each product is delivered through its own platform, with its own terms of service and privacy policy specific to that product. Those product-specific terms govern your use of the product itself &mdash; not these Terms.</p>
+      <p>Our products currently include (and any future products operated by Keystone will follow the same structure):</p>
+      <ul>
+        <li><strong><span class="brand-it">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></strong> &mdash; a carrier-grade inspection platform for independent adjusting firms. Product terms at <a href="https://inspektit.io/terms">inspektit.io/terms</a>.</li>
+      </ul>
+      <p>If you are using one of our products, your relationship with respect to that product is governed by that product's terms, not these corporate Website Terms.</p>
+
+      <h2><span class="num">04</span>Website Use</h2>
+      <p>The Website is provided for informational purposes. You may access and view the Website for personal or internal business use. You may not:</p>
+      <ul>
+        <li>Use the Website in any way that violates any applicable federal, state, local, or international law.</li>
+        <li>Attempt to gain unauthorized access to the Website, its servers, or any connected systems.</li>
+        <li>Use any automated means (bots, scrapers, crawlers) to access the Website, except for public search engine indexing.</li>
+        <li>Impersonate Keystone Systems, any Keystone employee, or any other person or entity.</li>
+        <li>Reproduce, distribute, modify, or create derivative works from any Website content without prior written permission.</li>
+      </ul>
+
+      <h2><span class="num">05</span>Intellectual Property</h2>
+      <p>All content on the Website &mdash; including text, graphics, logos, wordmarks, images, illustrations, software, and design &mdash; is owned by Keystone Systems or its licensors and is protected by United States and international copyright, trademark, and other intellectual property laws.</p>
+      <p>The Keystone Systems name, the Keystone wordmark, and the names and wordmarks of our products (including <span class="brand-it">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span>, INSPEKTstudio, INSPEKTaps, and <span class="brand-iv">INSPEKT<span class="acc">iV</span></span>) are trademarks of Keystone Systems. You may not use these marks without our prior written permission.</p>
+
+      <h2><span class="num">06</span>Third-Party Links</h2>
+      <p>The Website may contain links to third-party websites, resources, or services that are not owned or controlled by Keystone. We do not endorse and are not responsible for the content, policies, or practices of any third-party site. Your use of any third-party site is at your own risk and subject to that site's own terms.</p>
+
+      <h2><span class="num">07</span>Disclaimers</h2>
+      <p>The Website is provided on an &ldquo;as is&rdquo; and &ldquo;as available&rdquo; basis. Keystone Systems makes no representations or warranties of any kind, express or implied, about the operation of the Website or the information, content, or materials included on it.</p>
+      <p>To the fullest extent permitted by law, Keystone disclaims all warranties, including implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement. We do not warrant that the Website will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+      <p>Nothing on the Website constitutes professional, legal, financial, or other advice. You should not rely on Website content as a substitute for advice from qualified professionals.</p>
+
+      <h2><span class="num">08</span>Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, Keystone Systems and its officers, employees, agents, and affiliates will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, revenue, data, or goodwill, arising out of or in connection with your use of (or inability to use) the Website.</p>
+      <p>In no event will Keystone's total aggregate liability arising from or related to the Website exceed one hundred U.S. dollars ($100).</p>
+
+      <h2><span class="num">09</span>Indemnification</h2>
+      <p>You agree to defend, indemnify, and hold harmless Keystone Systems, its officers, employees, agents, and affiliates from and against any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising out of or in any way connected with your access to or use of the Website, your violation of these Terms, or your violation of any third-party right.</p>
+
+      <h2><span class="num">10</span>Modifications</h2>
+      <p>We may modify these Terms at any time. Updated Terms will be posted on this page with a new &ldquo;Last updated&rdquo; date. Your continued use of the Website after changes are posted constitutes your acceptance of the updated Terms. If the changes are material, we will make reasonable efforts to provide additional notice.</p>
+
+      <h2><span class="num">11</span>Governing Law</h2>
+      <p>These Terms are governed by and construed in accordance with the laws of the State of Texas, without regard to its conflict-of-law principles. Any dispute arising from these Terms or your use of the Website will be subject to the exclusive jurisdiction of the state and federal courts located in Texas.</p>
+
+      <h2><span class="num">12</span>Severability</h2>
+      <p>If any provision of these Terms is held to be invalid or unenforceable, that provision will be enforced to the maximum extent permitted, and the remaining provisions will remain in full force and effect.</p>
+
+      <h2><span class="num">13</span>Contact</h2>
+      <p>Questions about these Terms? Contact us at <a href="mailto:legal@keystonestack.com">legal@keystonestack.com</a>.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="wm">KEYSTONE<span class="sys">SYSTEMS</span></span>
+        <p>Software for the property insurance and independent adjusting industries. Built in the field. Scaled at the firm.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>Company</h5>
+          <a href="/">Home</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h5>Products</h5>
+          <a href="https://inspektit.io">InspektiT</a>
+        </div>
+        <div class="foot-col">
+          <h5>Legal</h5>
+          <a href="/terms.html">Terms</a>
+          <a href="/privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Keystone Systems. All rights reserved.</span>
+      <span>keystonestack.com</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

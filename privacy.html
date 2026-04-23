@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Keystone Systems" />
+<meta property="og:url" content="https://keystonestack.com/privacy.html" />
+<meta property="og:title" content="Privacy Policy — Keystone Systems" />
+<meta property="og:description" content="Privacy Policy for Keystone Systems and keystonestack.com." />
+<title>Privacy Policy — Keystone Systems</title>
+<meta name="description" content="Privacy Policy describing how Keystone Systems collects, uses, and protects information on keystonestack.com." />
+
+<link rel="stylesheet" href="/assets/css/shared.css" />
+
+<style>
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 48px;
+    background: rgba(9,9,9,0.92);
+    backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-wordmark { text-decoration: none; display: inline-block; line-height: 1; }
+  .nav-wordmark-line1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px; font-weight: 900;
+    letter-spacing: .04em;
+    color: var(--white);
+    display: block;
+    white-space: nowrap;
+  }
+  .nav-wordmark-line1 .sys { color: var(--bronze); }
+  .nav-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 400;
+    letter-spacing: .04em;
+    color: var(--dim);
+    display: block;
+    margin-top: 2px;
+    white-space: nowrap;
+  }
+  .nav-links { display: flex; align-items: center; gap: 40px; }
+  .nav-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-link:hover { color: var(--white); }
+  .nav-cta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--bronze);
+    border: 1px solid rgba(201,168,76,.35);
+    padding: 10px 24px;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+  }
+  .nav-cta:hover { background: var(--bronze); color: var(--black); }
+  @media (max-width: 760px) { .nav-links { display: none; } nav { padding: 14px 24px; } }
+
+  .page { padding-top: 140px; padding-bottom: 80px; }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 48px; }
+  @media (max-width: 760px) { .container { padding: 0 24px; } }
+
+  .legal-hero { margin-bottom: 56px; }
+  .legal-hero .kicker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase;
+    color: var(--bronze);
+    margin-bottom: 18px;
+  }
+  .legal-hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(36px, 5.5vw, 56px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+  .legal-hero .updated {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px; color: var(--muted);
+    letter-spacing: .02em;
+  }
+
+  .legal-body { font-family: 'Barlow', sans-serif; font-size: 16px; line-height: 1.75; color: var(--dim); }
+  .legal-body .lede { font-size: 17.5px; color: var(--white); margin-bottom: 48px; line-height: 1.6; max-width: 780px; }
+  .legal-body h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px; font-weight: 800;
+    letter-spacing: .02em; text-transform: uppercase;
+    color: var(--white);
+    margin: 52px 0 16px;
+    display: flex; align-items: baseline; gap: 16px;
+  }
+  .legal-body h2 .num {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px; font-weight: 900;
+    color: var(--bronze); letter-spacing: .1em;
+    min-width: 30px;
+  }
+  .legal-body h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px; font-weight: 700;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: var(--white);
+    margin: 32px 0 12px;
+    display: flex; align-items: baseline; gap: 14px;
+  }
+  .legal-body h3 .num {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10.5px; font-weight: 900;
+    color: var(--bronze); letter-spacing: .08em;
+    min-width: 26px;
+  }
+  .legal-body p { margin: 0 0 16px; }
+  .legal-body strong { font-weight: 600; color: var(--white); }
+  .legal-body a { color: var(--bronze); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,.35); transition: border-color .2s; }
+  .legal-body a:hover { border-bottom-color: var(--bronze); }
+  .legal-body ul { margin: 10px 0 20px 22px; padding: 0; }
+  .legal-body li { margin: 7px 0; color: var(--dim); }
+  .legal-body li strong { color: var(--white); }
+
+  footer {
+    margin-top: 80px;
+    padding: 52px 48px 30px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+  .foot-inner { max-width: 1100px; margin: 0 auto; }
+  .foot-top { display: flex; justify-content: space-between; gap: 48px; flex-wrap: wrap; margin-bottom: 36px; }
+  .foot-brand { max-width: 380px; }
+  .foot-brand .wm {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px; font-weight: 900;
+    letter-spacing: .04em;
+    color: var(--white); margin-bottom: 10px; display: block;
+  }
+  .foot-brand .wm .sys { color: var(--bronze); }
+  .foot-brand p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px; color: var(--muted); line-height: 1.55;
+  }
+  .foot-links { display: flex; gap: 40px; flex-wrap: wrap; }
+  .foot-col h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--dim); margin-bottom: 10px;
+  }
+  .foot-col a {
+    display: block;
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px; color: var(--muted);
+    text-decoration: none; padding: 4px 0;
+    transition: color .2s;
+  }
+  .foot-col a:hover { color: var(--white); }
+  .foot-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    font-family: 'Barlow', sans-serif;
+    font-size: 11.5px; color: var(--muted-2);
+    letter-spacing: .02em;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-wordmark">
+    <span class="nav-wordmark-line1">KEYSTONE<span class="sys">SYSTEMS</span></span>
+    <span class="nav-sub">Claims adjusting software, built in the field.</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#build" class="nav-link">What We Build</a>
+    <a href="/#serve" class="nav-link">Who We Serve</a>
+    <a href="/contact.html" class="nav-link">Contact</a>
+    <a href="/account.html" class="nav-cta">Sign In</a>
+  </div>
+</nav>
+
+<main class="page">
+  <div class="container">
+
+    <section class="legal-hero">
+      <div class="kicker">Legal</div>
+      <h1>Privacy Policy</h1>
+      <div class="updated">Last updated: April 23, 2026</div>
+    </section>
+
+    <div class="legal-body">
+      <p class="lede">This Privacy Policy describes how <span class="brand-keystone">KEYSTONE<span class="sys">SYSTEMS</span></span> (&ldquo;Keystone,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) collects, uses, and protects information when you visit the Keystone Systems corporate website at keystonestack.com (the &ldquo;Website&rdquo;).</p>
+
+      <h2><span class="num">01</span>Scope</h2>
+      <p>This Privacy Policy covers the Website only. It does <strong>not</strong> cover information collected by the software products Keystone Systems builds and operates &mdash; each product has its own privacy policy that governs data handled within that product.</p>
+      <p>Our product privacy policies are available at:</p>
+      <ul>
+        <li><strong><span class="brand-it">INSPEKT<span class="bk"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>iT</span></span></strong> &mdash; <a href="https://inspektit.io/privacy">inspektit.io/privacy</a></li>
+      </ul>
+      <p>If you are a user of any Keystone product, the data you submit to that product is governed by that product's privacy policy, not this one.</p>
+
+      <h2><span class="num">02</span>Information We Collect on the Website</h2>
+
+      <h3><span class="num">2.1</span>Information You Provide</h3>
+      <p>When you fill out a contact form, request information, or otherwise communicate with us through the Website, we may collect:</p>
+      <ul>
+        <li>Your name</li>
+        <li>Your email address</li>
+        <li>Your company or firm name</li>
+        <li>Any message content you submit</li>
+      </ul>
+      <p>We do not ask for or collect sensitive personal information (such as government ID numbers, financial account details, or health information) through the Website.</p>
+
+      <h3><span class="num">2.2</span>Information Collected Automatically</h3>
+      <p>When you visit the Website, our hosting provider and analytics tools may automatically collect limited technical information, including:</p>
+      <ul>
+        <li>IP address (usually anonymized)</li>
+        <li>Browser type and version</li>
+        <li>Operating system</li>
+        <li>Pages viewed and time spent on the Website</li>
+        <li>Referring website</li>
+        <li>General geographic location (country or region, derived from IP)</li>
+      </ul>
+      <p>This information is aggregated and used to understand how visitors use the Website. We do not combine it with personally identifying information from contact form submissions unless necessary to respond to a specific inquiry.</p>
+
+      <h3><span class="num">2.3</span>Cookies</h3>
+      <p>The Website may use cookies and similar technologies for basic functionality and analytics. You can control cookies through your browser settings. Disabling cookies may affect some Website features but will not prevent you from accessing content.</p>
+
+      <h2><span class="num">03</span>How We Use Information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Respond to your inquiries and communications.</li>
+        <li>Provide information about our products when you request it.</li>
+        <li>Operate and improve the Website.</li>
+        <li>Understand Website usage patterns in aggregate (analytics).</li>
+        <li>Detect, prevent, and respond to fraud or security incidents.</li>
+        <li>Comply with legal obligations.</li>
+      </ul>
+
+      <h2><span class="num">04</span>How We Share Information</h2>
+      <p>Keystone Systems does not sell personal information. We share information only as follows:</p>
+      <ul>
+        <li><strong>Service providers.</strong> We use third-party services for hosting, email delivery, analytics, and similar functions. These providers have access only to the information needed to perform their function and are contractually required to protect it.</li>
+        <li><strong>Legal requirements.</strong> We may disclose information when required by law, court order, or to protect the rights, property, or safety of Keystone, our users, or others.</li>
+        <li><strong>Business transfers.</strong> If Keystone is involved in a merger, acquisition, or asset sale, information may be transferred as part of that transaction. Any acquirer will be bound by this Privacy Policy or a successor policy of equivalent protection.</li>
+      </ul>
+
+      <h2><span class="num">05</span>Third-Party Services We Use</h2>
+      <p>The Website relies on a limited set of third-party services:</p>
+      <ul>
+        <li><strong>Hosting and analytics</strong> &mdash; to serve the Website and measure aggregate traffic.</li>
+        <li><strong>Email delivery</strong> &mdash; to receive and respond to contact form submissions.</li>
+        <li><strong>Scheduling</strong> &mdash; when you use a scheduling link, that third-party service has its own privacy policy that applies to your interaction with it.</li>
+      </ul>
+
+      <h2><span class="num">06</span>Data Retention</h2>
+      <p>We retain contact form submissions and related correspondence for as long as needed to respond to your inquiry and for a reasonable period thereafter for record-keeping and legitimate business purposes. Aggregate analytics data may be retained longer in anonymized form.</p>
+      <p>You may request deletion of your information at any time by contacting <a href="mailto:legal@keystonestack.com">legal@keystonestack.com</a>.</p>
+
+      <h2><span class="num">07</span>Data Security</h2>
+      <p>We use commercially reasonable safeguards to protect the information we collect through the Website, including encryption in transit, access controls, and secure hosting. No method of transmission or storage is perfectly secure, and we cannot guarantee absolute security.</p>
+
+      <h2><span class="num">08</span>Your Rights</h2>
+      <p>Depending on your location, you may have the following rights regarding information we hold about you:</p>
+      <ul>
+        <li><strong>Access.</strong> Request a copy of the information we have about you.</li>
+        <li><strong>Correction.</strong> Ask us to correct inaccurate or incomplete information.</li>
+        <li><strong>Deletion.</strong> Ask us to delete your information, subject to legal obligations we may have to retain it.</li>
+        <li><strong>Opt-out.</strong> Opt out of certain uses of your information, including marketing communications.</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:legal@keystonestack.com">legal@keystonestack.com</a>. We will respond within the timeframe required by applicable law.</p>
+
+      <h2><span class="num">09</span>Children's Privacy</h2>
+      <p>The Website is not directed to children under 13 (or the equivalent minimum age in your jurisdiction). We do not knowingly collect personal information from children. If you believe a child has provided information to us, please contact us at <a href="mailto:legal@keystonestack.com">legal@keystonestack.com</a>.</p>
+
+      <h2><span class="num">10</span>International Visitors</h2>
+      <p>Keystone Systems is based in the United States. If you visit the Website from outside the U.S., your information will be transferred to and processed in the United States. By using the Website, you consent to that transfer and processing.</p>
+
+      <h2><span class="num">11</span>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Updated policies will be posted on this page with a new &ldquo;Last updated&rdquo; date. Material changes will be communicated through a notice on the Website.</p>
+
+      <h2><span class="num">12</span>Contact Us</h2>
+      <p>Questions about this Privacy Policy or our privacy practices? Contact us at <a href="mailto:legal@keystonestack.com">legal@keystonestack.com</a>.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="wm">KEYSTONE<span class="sys">SYSTEMS</span></span>
+        <p>Software for the property insurance and independent adjusting industries. Built in the field. Scaled at the firm.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>Company</h5>
+          <a href="/">Home</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h5>Products</h5>
+          <a href="https://inspektit.io">InspektiT</a>
+        </div>
+        <div class="foot-col">
+          <h5>Legal</h5>
+          <a href="/terms.html">Terms</a>
+          <a href="/privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Keystone Systems. All rights reserved.</span>
+      <span>keystonestack.com</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
